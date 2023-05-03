@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <Windows.h>
-#include <stdbool.h>
+#include "circle.h"
+#include <math.h>
 
 static COLORREF color;
 
@@ -65,15 +66,15 @@ void circleOptions() {
     scanf("%c", &option);
 
     if (option == 'a') {
-
+        //DrawCartesianCircle(hdc,xc,yc,r,color);
     } else if (option == 'b') {
-
+        //DrawPolarCircle(hdc,xc,yc,r,color);
     } else if (option == 'c') {
-
+        //DrawCircleIterativePolar(hdc,xc,yc,r,color);
     } else if (option == 'd') {
-
+        //DrawMidpointCircle(hdc,xc,yc,r,color);
     } else if (option == 'e') {
-
+        //DrawModifiedMidpointCircle(hdc,xc,yc,r,color);
     }
 }
 
