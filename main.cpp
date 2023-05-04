@@ -19,18 +19,11 @@ static int quarter;
 static int xs,ys,xe,ye;
 
 struct COLOR{
-    int r, g, b;
+    int r = 255, g = 255, b =255;
 };
 COLOR BackgroundColor;
 HCURSOR cursor;
 void colorInit() {
-    cout << "Choose Color:\n"
-            "a. White\n"
-            "b. Black\n"
-            "c. Red\n"
-            "d. Green\n"
-            "e. Blue\n"
-            "f. Other" << endl;
     cin >> colorOption;
     if (colorOption == 'a') {
         BackgroundColor.r = 255;
@@ -58,11 +51,6 @@ void colorInit() {
     }
 }
 void cursorInit() {
-    cout << "Choose the Shape of the cursor:\n"
-            "a. Arrow\n"
-            "b. Hand\n"
-            "c. Cross\n"
-            << endl;
     char chosenCursor;
     cin >> chosenCursor;
     if(chosenCursor == 'a'){
@@ -117,43 +105,56 @@ void quarterInput(){
 }
 void mainList() {
     cout <<"Enter Your Option Character: \n"
-           "a. Clear screen from shapes\n"
-           "b. Save all data in screen \n"
-           "c. Load data from files\n"
-           "d. Draw line [DDA, Midpoint and Parametric]\n"
-           "e. Draw Circle [Direct, Polar, Iterative Polar, Midpoint and Modified Midpoint]\n"
-           "f. Filling Circle with lines \n"
-           "g. Filling Circle with other circles \n"
-           "h. Filling Square with Hermit Curve[Vertical]\n"
-           "i. Filling Rectangle with Bezier Curve[Horizontal]\n"
-           "j. Convex Filling \n"
-           "k. Non Convex Filling \n"
-           "l. Recursive Flood Fill\n"
-           "m. Non Recursive Flood Fill\n"
-           "n. Cardinal Spline Curve\n"
-           "o. Ellipse [Direct, Polar and Midpoint]\n"
-           "p. Clipping algorithms using Rectangle as Clipping Window[Point ,Line, Polygon] \n"
-           "q. Clipping algorithms using Square as Clipping Window[Point ,Line]" << endl;
+           "a. Set background color\n"
+           "b. Change mouse cursor\n"
+           "c. Clear screen from shapes\n"
+           "d. Save all data in screen \n"
+           "e. Load data from files\n"
+           "f. Draw line [DDA, Midpoint and Parametric]\n"
+           "g. Draw Circle [Direct, Polar, Iterative Polar, Midpoint and Modified Midpoint]\n"
+           "h. Filling Circle with lines \n"
+           "i. Filling Circle with other circles \n"
+           "j. Filling Square with Hermit Curve[Vertical]\n"
+           "k. Filling Rectangle with Bezier Curve[Horizontal]\n"
+           "l. Convex Filling \n"
+           "m. Non Convex Filling \n"
+           "n. Recursive Flood Fill\n"
+           "o. Non Recursive Flood Fill\n"
+           "p. Cardinal Spline Curve\n"
+           "q. Ellipse [Direct, Polar and Midpoint]\n"
+           "r. Clipping algorithms using Rectangle as Clipping Window[Point ,Line, Polygon] \n"
+           "s. Clipping algorithms using Square as Clipping Window[Point ,Line]" << endl;
     cin >> option;
     if (option == 'a') {
-
+        cout << "Choose Color:\n"
+                "a. White\n"
+                "b. Black\n"
+                "c. Red\n"
+                "d. Green\n"
+                "e. Blue\n"
+                "f. Other" << endl;
     } else if (option == 'b') {
-
+        cout << "Choose the Shape of the cursor:\n"
+                "a. Arrow\n"
+                "b. Hand\n"
+                "c. Cross\n"
+             << endl;
     } else if (option == 'c') {
 
     } else if (option == 'd') {
-        lineOptions();
+
     } else if (option == 'e') {
-        circleOptions();
+
     } else if (option == 'f') {
-        quarterInput();
+        lineOptions();
 
     } else if (option == 'g') {
-        quarterInput();
+        circleOptions();
+
     } else if (option == 'h') {
-
+        quarterInput();
     } else if (option == 'i') {
-
+        quarterInput();
     } else if (option == 'j') {
 
     } else if (option == 'k') {
@@ -165,46 +166,50 @@ void mainList() {
     } else if (option == 'n') {
 
     } else if (option == 'o') {
-        ellipseOptions();
+
     } else if (option == 'p') {
-        clippingRecOptions();
+
     } else if (option == 'q') {
+        ellipseOptions();
+    }
+    else if (option == 'r') {
+        clippingRecOptions();
+    }
+    else if (option == 's') {
         clippingSquareOptions();
+
     }
 }
-// testing
+
 LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
     HDC hdc;
     switch (m) {
         case WM_CREATE:
             mainList();
             break;
-        case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            hdc = BeginPaint(hWnd, &ps);
-            HBRUSH hBrush = CreateSolidBrush(RGB(BackgroundColor.r, BackgroundColor.g, BackgroundColor.b));
-            RECT rect;
-            GetClientRect(hWnd, &rect);
-            FillRect(hdc, &rect, hBrush);
-            DeleteObject(hBrush);
-            EndPaint(hWnd, &ps);
-            break;
-        }
-        case WM_SETCURSOR:
-            SetCursor(cursor);
-            break;
         case WM_LBUTTONDOWN:
         {
             if (option == 'a') {
-
+                colorInit();
+                InvalidateRect(hWnd, NULL, TRUE);
+                UpdateWindow(hWnd);
+                mainList();
+                break;
             } else if (option == 'b') {
-
+                cursorInit();
+                SetCursor(cursor);
+                InvalidateRect(hWnd, NULL, TRUE);
+                UpdateWindow(hWnd);
+                mainList();
             } else if (option == 'c') {
 
             } else if (option == 'd') {
 
             } else if (option == 'e') {
+
+            } else if (option == 'f') {
+
+            } else if (option == 'g') {
                 if(counter%2==0){
                     xs = LOWORD(lp);
                     ys = HIWORD(lp);
@@ -229,16 +234,12 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     mainList();
 
                 }
-            } else if (option == 'f') {
-                quarterInput();
-
-            } else if (option == 'g') {
-                quarterInput();
-
 
             } else if (option == 'h') {
+                quarterInput();
 
             } else if (option == 'i') {
+                quarterInput();
 
             } else if (option == 'j') {
 
@@ -270,6 +271,14 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
         case WM_DESTROY:
             PostQuitMessage(0);
         default:
+            PAINTSTRUCT ps;
+            hdc = BeginPaint(hWnd, &ps);
+            HBRUSH hBrush = CreateSolidBrush(RGB(BackgroundColor.r, BackgroundColor.g, BackgroundColor.b));
+            RECT rect;
+            GetClientRect(hWnd, &rect);
+            FillRect(hdc, &rect, hBrush);
+            DeleteObject(hBrush);
+            EndPaint(hWnd, &ps);
             return DefWindowProc(hWnd, m, wp, lp);
     }
 
@@ -277,18 +286,12 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
     return 0;
 }
 
-void init(){
-    cout << "Set you best configuration of the window" << endl;
-    cout << "----------------------------------------" << endl;
-    colorInit();
-    cursorInit();
-}
 int APIENTRY WinMain(HINSTANCE h, HINSTANCE p, LPSTR cmd, int csh) {
     WNDCLASS wc = {};
     wc.lpszClassName = "MyClass";
     wc.lpszMenuName = NULL;
     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
-    wc.hbrBackground = (HBRUSH) CreateSolidBrush(RGB(0, 0, 0));
+    wc.hbrBackground = (HBRUSH) CreateSolidBrush(RGB(255, 255, 255));
     wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
     wc.style = CS_HREDRAW | CS_VREDRAW;
     wc.cbClsExtra = 0;
@@ -296,7 +299,6 @@ int APIENTRY WinMain(HINSTANCE h, HINSTANCE p, LPSTR cmd, int csh) {
     wc.lpfnWndProc = WndProc;
     wc.hInstance = h;
     RegisterClass(&wc);
-    init();
     HWND hWnd = CreateWindow("MyClass", "Hello", WS_OVERLAPPEDWINDOW, 0, 0, 800, 600, NULL, NULL, h, 0);
     if (hWnd == NULL)
     {
