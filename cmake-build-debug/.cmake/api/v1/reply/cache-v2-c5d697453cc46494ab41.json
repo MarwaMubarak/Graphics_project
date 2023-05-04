@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "e:/CLionProjects/GraphicsProject/cmake-build-debug"
+			"value" : "e:/StudioProjects/Graphics_project/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -623,7 +623,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "E:/CLionProjects/GraphicsProject"
+			"value" : "E:/StudioProjects/Graphics_project"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1239,7 +1239,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/CLionProjects/GraphicsProject/cmake-build-debug"
+			"value" : "E:/StudioProjects/Graphics_project/cmake-build-debug"
 		},
 		{
 			"name" : "GraphicsProject_IS_TOP_LEVEL",
@@ -1263,7 +1263,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/CLionProjects/GraphicsProject"
+			"value" : "E:/StudioProjects/Graphics_project"
 		}
 	],
 	"kind" : "cache",

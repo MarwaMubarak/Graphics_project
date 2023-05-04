@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2021.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2021.2/bin/ninja/win/ninja.exe" -G Ninja -S E:\CLionProjects\GraphicsProject -B E:\CLionProjects\GraphicsProject\cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2021.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2021.2/bin/ninja/win/ninja.exe" -G Ninja -S E:\StudioProjects\Graphics_project -B E:\StudioProjects\Graphics_project\cmake-build-debug
 -- Configuring done
 -- Generating done
--- Build files have been written to: E:/CLionProjects/GraphicsProject/cmake-build-debug
+-- Build files have been written to: E:/StudioProjects/Graphics_project/cmake-build-debug

@@ -149,8 +149,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "E:/CLionProjects/GraphicsProject/cmake-build-debug",
-		"source" : "E:/CLionProjects/GraphicsProject"
+		"build" : "E:/StudioProjects/Graphics_project/cmake-build-debug",
+		"source" : "E:/StudioProjects/Graphics_project"
 	},
 	"version" : 
 	{

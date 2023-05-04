@@ -1,16 +1,8 @@
 # ninja log v5
-47	619	7049311642394154	CMakeFiles/GraphicsProject.dir/rectangle.cpp.obj	1100af87fdfb873c
-22	642	7049311642746109	CMakeFiles/GraphicsProject.dir/clipping.cpp.obj	b8dda812035c60ea
-589	814	7049316555583562	GraphicsProject.exe	15e0936280cb3b03
-34	643	7049311642756085	CMakeFiles/GraphicsProject.dir/circle.cpp.obj	cd8ae36ee4d1c29e
-2	588	7049316553402370	CMakeFiles/GraphicsProject.dir/main.cpp.obj	a0a25f0720b05ddb
-3	1138	7049328355210894	CMakeFiles/GraphicsProject.dir/floodfill.cpp.obj	ef7bf85581ef139c
-1142	1406	7049328357769569	GraphicsProject.exe	87ab2510a9bee251
-2	445	7049329386222503	CMakeFiles/GraphicsProject.dir/main.cpp.obj	a0a25f0720b05ddb
-447	619	7049329387863309	GraphicsProject.exe	87ab2510a9bee251
-1	445	7049329961356671	CMakeFiles/GraphicsProject.dir/main.cpp.obj	a0a25f0720b05ddb
-446	617	7049329963002791	GraphicsProject.exe	87ab2510a9bee251
-2	451	7049330357080438	CMakeFiles/GraphicsProject.dir/main.cpp.obj	a0a25f0720b05ddb
-451	626	7049330358716754	GraphicsProject.exe	87ab2510a9bee251
-2	488	7049331170275501	CMakeFiles/GraphicsProject.dir/main.cpp.obj	a0a25f0720b05ddb
-488	884	7049331174146377	GraphicsProject.exe	87ab2510a9bee251
+36	518	7049476554229379	CMakeFiles/GraphicsProject.dir/rectangle.cpp.obj	da7e791ef65e88e5
+1	284	7049476804607786	build.ninja	4a998a3fca894a24
+20	506	7049476554118424	CMakeFiles/GraphicsProject.dir/clipping.cpp.obj	d2f83d071a5b704c
+1550	1785	7049476566786972	GraphicsProject.exe	87ab2510a9bee251
+28	1550	7049476564547613	CMakeFiles/GraphicsProject.dir/floodfill.cpp.obj	92ed26ed39d2b811
+11	530	7049476554340603	CMakeFiles/GraphicsProject.dir/circle.cpp.obj	a9d6fb428ae83249
+3	785	7049476556911269	CMakeFiles/GraphicsProject.dir/main.cpp.obj	df330b1f92a6fe28

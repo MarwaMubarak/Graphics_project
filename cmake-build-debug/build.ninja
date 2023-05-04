@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = E$:/CLionProjects/GraphicsProject/cmake-build-debug/
+cmake_ninja_workdir = E$:/StudioProjects/Graphics_project/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target GraphicsProject
 
@@ -49,31 +49,31 @@ cmake_ninja_workdir = E$:/CLionProjects/GraphicsProject/cmake-build-debug/
 
 build cmake_object_order_depends_target_GraphicsProject: phony || CMakeFiles/GraphicsProject.dir
 
-build CMakeFiles/GraphicsProject.dir/main.cpp.obj: CXX_COMPILER__GraphicsProject_Debug E$:/CLionProjects/GraphicsProject/main.cpp || cmake_object_order_depends_target_GraphicsProject
+build CMakeFiles/GraphicsProject.dir/main.cpp.obj: CXX_COMPILER__GraphicsProject_Debug E$:/StudioProjects/Graphics_project/main.cpp || cmake_object_order_depends_target_GraphicsProject
   DEP_FILE = CMakeFiles\GraphicsProject.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++1z
   OBJECT_DIR = CMakeFiles\GraphicsProject.dir
   OBJECT_FILE_DIR = CMakeFiles\GraphicsProject.dir
 
-build CMakeFiles/GraphicsProject.dir/circle.cpp.obj: CXX_COMPILER__GraphicsProject_Debug E$:/CLionProjects/GraphicsProject/circle.cpp || cmake_object_order_depends_target_GraphicsProject
+build CMakeFiles/GraphicsProject.dir/circle.cpp.obj: CXX_COMPILER__GraphicsProject_Debug E$:/StudioProjects/Graphics_project/circle.cpp || cmake_object_order_depends_target_GraphicsProject
   DEP_FILE = CMakeFiles\GraphicsProject.dir\circle.cpp.obj.d
   FLAGS = -g -std=gnu++1z
   OBJECT_DIR = CMakeFiles\GraphicsProject.dir
   OBJECT_FILE_DIR = CMakeFiles\GraphicsProject.dir
 
-build CMakeFiles/GraphicsProject.dir/clipping.cpp.obj: CXX_COMPILER__GraphicsProject_Debug E$:/CLionProjects/GraphicsProject/clipping.cpp || cmake_object_order_depends_target_GraphicsProject
+build CMakeFiles/GraphicsProject.dir/clipping.cpp.obj: CXX_COMPILER__GraphicsProject_Debug E$:/StudioProjects/Graphics_project/clipping.cpp || cmake_object_order_depends_target_GraphicsProject
   DEP_FILE = CMakeFiles\GraphicsProject.dir\clipping.cpp.obj.d
   FLAGS = -g -std=gnu++1z
   OBJECT_DIR = CMakeFiles\GraphicsProject.dir
   OBJECT_FILE_DIR = CMakeFiles\GraphicsProject.dir
 
-build CMakeFiles/GraphicsProject.dir/rectangle.cpp.obj: CXX_COMPILER__GraphicsProject_Debug E$:/CLionProjects/GraphicsProject/rectangle.cpp || cmake_object_order_depends_target_GraphicsProject
+build CMakeFiles/GraphicsProject.dir/rectangle.cpp.obj: CXX_COMPILER__GraphicsProject_Debug E$:/StudioProjects/Graphics_project/rectangle.cpp || cmake_object_order_depends_target_GraphicsProject
   DEP_FILE = CMakeFiles\GraphicsProject.dir\rectangle.cpp.obj.d
   FLAGS = -g -std=gnu++1z
   OBJECT_DIR = CMakeFiles\GraphicsProject.dir
   OBJECT_FILE_DIR = CMakeFiles\GraphicsProject.dir
 
-build CMakeFiles/GraphicsProject.dir/floodfill.cpp.obj: CXX_COMPILER__GraphicsProject_Debug E$:/CLionProjects/GraphicsProject/floodfill.cpp || cmake_object_order_depends_target_GraphicsProject
+build CMakeFiles/GraphicsProject.dir/floodfill.cpp.obj: CXX_COMPILER__GraphicsProject_Debug E$:/StudioProjects/Graphics_project/floodfill.cpp || cmake_object_order_depends_target_GraphicsProject
   DEP_FILE = CMakeFiles\GraphicsProject.dir\floodfill.cpp.obj.d
   FLAGS = -g -std=gnu++1z
   OBJECT_DIR = CMakeFiles\GraphicsProject.dir
@@ -102,7 +102,7 @@ build GraphicsProject.exe: CXX_EXECUTABLE_LINKER__GraphicsProject_Debug CMakeFil
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\CLionProjects\GraphicsProject\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D E:\StudioProjects\Graphics_project\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -113,7 +113,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\CLionProjects\GraphicsProject\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SE:\CLionProjects\GraphicsProject -BE:\CLionProjects\GraphicsProject\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D E:\StudioProjects\Graphics_project\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SE:\StudioProjects\Graphics_project -BE:\StudioProjects\Graphics_project\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -131,7 +131,7 @@ build GraphicsProject: phony GraphicsProject.exe
 # =============================================================================
 
 #############################################
-# Folder: E:/CLionProjects/GraphicsProject/cmake-build-debug
+# Folder: E:/StudioProjects/Graphics_project/cmake-build-debug
 
 build all: phony GraphicsProject.exe
 

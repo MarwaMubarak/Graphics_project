@@ -1,4 +1,4 @@
-# Install script for directory: E:/CLionProjects/GraphicsProject
+# Install script for directory: E:/StudioProjects/Graphics_project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "E:/CLionProjects/GraphicsProject/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/StudioProjects/Graphics_project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
