@@ -5,8 +5,9 @@
 #include <math.h>
 #include <winnt.h >
 
-static COLORREF color= RGB(0,255,0);
+using namespace std;
 static int counter =0;
+static COLORREF color= RGB(0,255,0);
 static char colorOption;
 static char lineOption;
 static char circleOption;
@@ -16,155 +17,124 @@ static char clippingSquareOption;
 static char option='g';
 static int quarter;
 static int xs,ys,xe,ye;
-char input(){
-    char buffer [250];
-    HANDLE hStdin = GetStdHandle(STD_INPUT_HANDLE);
-    DWORD oldMode, newMode, numRead;
 
-    // switch console input mode to allow reading of line input
-    GetConsoleMode(hStdin, &oldMode);
-    newMode = oldMode & ~(ENABLE_LINE_INPUT | ENABLE_ECHO_INPUT);
-    SetConsoleMode(hStdin, newMode);
-
-    // read input from console
-    ReadConsole(hStdin, buffer, sizeof(buffer), &numRead, NULL);
-    buffer[numRead - 1] = '\0'; // remove newline character
-    char  ch=buffer[0];
-    // restore console input mode
-    SetConsoleMode(hStdin, oldMode);
-
-
-    memset(buffer, 0, sizeof(buffer)); // clear buffer
-    return ch;
-}
-int inputNum(){
-    char buffer [250];
-    HANDLE hStdin = GetStdHandle(STD_INPUT_HANDLE);
-    DWORD oldMode, newMode, numRead;
-
-    // switch console input mode to allow reading of line input
-    GetConsoleMode(hStdin, &oldMode);
-    newMode = oldMode & ~(ENABLE_LINE_INPUT | ENABLE_ECHO_INPUT);
-    SetConsoleMode(hStdin, newMode);
-
-    // read input from console
-    ReadConsole(hStdin, buffer, sizeof(buffer), &numRead, NULL);
-    buffer[numRead - 1] = '\0'; // remove newline character
-    int num=0;
-    int base=1;
-    for (int  i = (int)numRead - 2; i >= 0; --i) {
-        num+=(buffer[i]-'0')*base;
-        base*=10;
-    }
-    // restore console input mode
-    SetConsoleMode(hStdin, oldMode);
-
-    memset(buffer, 0, sizeof(buffer)); // clear buffer
-    return num;
-}
-void colorOptions() {
-    printf("Choose Color:\n"
-           "a. White\n"
-           "b. Black\n"
-           "c. Red\n"
-           "d. Green\n"
-           "e. Blue\n"
-           "f. Other\n"
-    );
-    colorOption=input();
+struct COLOR{
+    int r, g, b;
+};
+COLOR BackgroundColor;
+HCURSOR cursor;
+void colorInit() {
+    cout << "Choose Color:\n"
+            "a. White\n"
+            "b. Black\n"
+            "c. Red\n"
+            "d. Green\n"
+            "e. Blue\n"
+            "f. Other" << endl;
+    cin >> colorOption;
     if (colorOption == 'a') {
-        color = RGB(255, 255, 255);
+        BackgroundColor.r = 255;
+        BackgroundColor.g = 255;
+        BackgroundColor.b = 255;
     } else if (colorOption == 'b') {
-        color = RGB(0, 0, 0);
+        BackgroundColor.r = 0;
+        BackgroundColor.g = 0;
+        BackgroundColor.b = 0;
     } else if (colorOption == 'c') {
-        color = RGB(255, 0, 0);
+        BackgroundColor.r = 255;
+        BackgroundColor.g = 0;
+        BackgroundColor.b = 0;
     } else if (colorOption == 'd') {
-        color = RGB(0, 255, 0);
+        BackgroundColor.r = 0;
+        BackgroundColor.g = 255;
+        BackgroundColor.b = 0;
     } else if (colorOption == 'e') {
-        color = RGB(0, 0, 255);
+        BackgroundColor.r = 0;
+        BackgroundColor.g = 0;
+        BackgroundColor.b = 255;
     } else if (colorOption == 'f') {
-        printf("Enter The Color RGB Values:\n");
-        int r, g, b;
-        r= inputNum();
-        g= inputNum();
-        b= inputNum();
-        printf("%d  %d  %d",r,g,b);
-        color = RGB(r, g, b);
+        cout << "Enter The Color RGB Values\n";
+        cin >> BackgroundColor.r >> BackgroundColor.g >> BackgroundColor.b;
+    }
+}
+void cursorInit() {
+    cout << "Choose the Shape of the cursor:\n"
+            "a. Arrow\n"
+            "b. Hand\n"
+            "c. Cross\n"
+            << endl;
+    char chosenCursor;
+    cin >> chosenCursor;
+    if(chosenCursor == 'a'){
+        cursor = LoadCursor(NULL, IDC_ARROW);
+    }
+    else if(chosenCursor == 'b'){
+        cursor = LoadCursor(NULL, IDC_HAND);
+    }
+    else if(chosenCursor == 'c'){
+        cursor = LoadCursor(NULL, IDC_CROSS);
     }
 }
 void lineOptions() {
-    printf("Choose Algorithm:\n"
-           "a. DDA\n"
-           "b. MidPoint\n"
-           "c. Parametric\n"
-    );
-    lineOption=input();
-
+    cout << "Choose Algorithm:\n"
+            "a. DDA\n"
+            "b. MidPoint\n"
+            "c. Parametric" << endl;
+    cin >> lineOption;
 }
 void circleOptions() {
-    printf("Choose Algorithm:\n"
+    cout <<"Choose Algorithm:\n"
            "a. Direct\n"
            "b. Polar\n"
            "c. Iterative Polar\n"
            "d. Midpoint\n"
-           "e. Modified Midpoint\n"
-    );
-    circleOption=input();
+           "e. Modified Midpoint" << endl;
+    cin >> circleOption;
 }
 void ellipseOptions() {
-    printf("Choose Algorithm:\n"
-           "a. Direct\n"
-           "b. Polar\n"
-           "c. Midpoint\n"
-    );
-    ellipseOption=input();
+    cout << "Choose Algorithm:\n"
+            "a. Direct\n"
+            "b. Polar\n"
+            "c. Midpoint" << endl;
+    cin >> ellipseOption;
 }
 void clippingRecOptions() {
-    printf("Choose Algorithm:\n"
-           "a. Point\n"
-           "b. Line\n"
-           "c. Polygon\n"
-    );
-    clippingRecOption=input();
+    cout << "Choose Algorithm:\n"
+            "a. Point\n"
+            "b. Line\n"
+            "c. Polygon" << endl;
+    cin >> clippingRecOption;
 }
 void clippingSquareOptions() {
-    printf("Choose Algorithm:\n"
-           "a. Point\n"
-           "b. Line\n"
-    );
-    clippingSquareOption=input();
-
+    cout << "Choose Algorithm:\n"
+            "a. Point\n"
+            "b. Line" <<endl;
+    cin >> clippingSquareOption;
 }
 void quarterInput(){
-    printf("Enter Quarter [1, 2, 3, 4]: \n");
-    quarter=input()-'0';
+    cout << "Enter Quarter [1, 2, 3, 4]: " << endl;
+    cin >> quarter;
 }
 void mainList() {
-
-    printf("Enter Your Option Character: \n"
-           "a. Change the background of window to be white\n"
-           "b. Change the shape of your window mouse\n"
-           "c. Clear screen from shapes\n"
-           "d. Save all data in screen \n"
-           "e. Load data from files\n"
-           "f. Draw line [DDA, Midpoint and Parametric]\n"
-           "g. Draw Circle [Direct, Polar, Iterative Polar, Midpoint and Modified Midpoint]\n"
-           "h. Filling Circle with lines \n"
-           "i. Filling Circle with other circles \n"
-           "j. Filling Square with Hermit Curve[Vertical]\n"
-           "k. Filling Rectangle with Bezier Curve[Horizontal]\n"
-           "l. Convex Filling \n"
-           "m. Non Convex Filling \n"
-           "n. Recursive Flood Fill\n"
-           "o. Non Recursive Flood Fill\n"
-           "p. Cardinal Spline Curve\n"
-           "q. Ellipse [Direct, Polar and Midpoint]\n"
-           "r. Clipping algorithms using Rectangle as Clipping Window[Point ,Line, Polygon] \n"
-           "s. Clipping algorithms using Square as Clipping Window[Point ,Line]\n"
-
-    );
-    option=input();
-    colorOptions();
+    cout <<"Enter Your Option Character: \n"
+           "a. Clear screen from shapes\n"
+           "b. Save all data in screen \n"
+           "c. Load data from files\n"
+           "d. Draw line [DDA, Midpoint and Parametric]\n"
+           "e. Draw Circle [Direct, Polar, Iterative Polar, Midpoint and Modified Midpoint]\n"
+           "f. Filling Circle with lines \n"
+           "g. Filling Circle with other circles \n"
+           "h. Filling Square with Hermit Curve[Vertical]\n"
+           "i. Filling Rectangle with Bezier Curve[Horizontal]\n"
+           "j. Convex Filling \n"
+           "k. Non Convex Filling \n"
+           "l. Recursive Flood Fill\n"
+           "m. Non Recursive Flood Fill\n"
+           "n. Cardinal Spline Curve\n"
+           "o. Ellipse [Direct, Polar and Midpoint]\n"
+           "p. Clipping algorithms using Rectangle as Clipping Window[Point ,Line, Polygon] \n"
+           "q. Clipping algorithms using Square as Clipping Window[Point ,Line]" << endl;
+    cin >> option;
     if (option == 'a') {
 
     } else if (option == 'b') {
@@ -172,18 +142,17 @@ void mainList() {
     } else if (option == 'c') {
 
     } else if (option == 'd') {
-
-    } else if (option == 'e') {
-
-    } else if (option == 'f') {
         lineOptions();
-    } else if (option == 'g') {
+    } else if (option == 'e') {
         circleOptions();
+    } else if (option == 'f') {
+        quarterInput();
 
+    } else if (option == 'g') {
+        quarterInput();
     } else if (option == 'h') {
-        quarterInput();
+
     } else if (option == 'i') {
-        quarterInput();
 
     } else if (option == 'j') {
 
@@ -196,14 +165,10 @@ void mainList() {
     } else if (option == 'n') {
 
     } else if (option == 'o') {
-
-    } else if (option == 'p') {
-
-    } else if (option == 'q') {
         ellipseOptions();
-    } else if (option == 'r') {
+    } else if (option == 'p') {
         clippingRecOptions();
-    } else if (option == 's') {
+    } else if (option == 'q') {
         clippingSquareOptions();
     }
 }
@@ -214,9 +179,23 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
         case WM_CREATE:
             mainList();
             break;
+        case WM_PAINT:
+        {
+            PAINTSTRUCT ps;
+            hdc = BeginPaint(hWnd, &ps);
+            HBRUSH hBrush = CreateSolidBrush(RGB(BackgroundColor.r, BackgroundColor.g, BackgroundColor.b));
+            RECT rect;
+            GetClientRect(hWnd, &rect);
+            FillRect(hdc, &rect, hBrush);
+            DeleteObject(hBrush);
+            EndPaint(hWnd, &ps);
+            break;
+        }
+        case WM_SETCURSOR:
+            SetCursor(cursor);
+            break;
         case WM_LBUTTONDOWN:
         {
-
             if (option == 'a') {
 
             } else if (option == 'b') {
@@ -226,10 +205,6 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
             } else if (option == 'd') {
 
             } else if (option == 'e') {
-
-            } else if (option == 'f') {
-
-            } else if (option == 'g') {
                 if(counter%2==0){
                     xs = LOWORD(lp);
                     ys = HIWORD(lp);
@@ -254,13 +229,16 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     mainList();
 
                 }
+            } else if (option == 'f') {
+                quarterInput();
+
+            } else if (option == 'g') {
+                quarterInput();
+
 
             } else if (option == 'h') {
-                quarterInput();
-
 
             } else if (option == 'i') {
-                quarterInput();
 
             } else if (option == 'j') {
 
@@ -283,7 +261,6 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
             } else if (option == 's') {
 
             }
-
             counter++;
         }
             break;
@@ -300,25 +277,34 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
     return 0;
 }
 
-
+void init(){
+    cout << "Set you best configuration of the window" << endl;
+    cout << "----------------------------------------" << endl;
+    colorInit();
+    cursorInit();
+}
 int APIENTRY WinMain(HINSTANCE h, HINSTANCE p, LPSTR cmd, int csh) {
-
-    WNDCLASS wc;
+    WNDCLASS wc = {};
     wc.lpszClassName = "MyClass";
     wc.lpszMenuName = NULL;
     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+    wc.hbrBackground = (HBRUSH) CreateSolidBrush(RGB(0, 0, 0));
     wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-    wc.hbrBackground = (HBRUSH) GetStockObject(LTGRAY_BRUSH);
     wc.style = CS_HREDRAW | CS_VREDRAW;
     wc.cbClsExtra = 0;
     wc.cbWndExtra = 0;
     wc.lpfnWndProc = WndProc;
     wc.hInstance = h;
     RegisterClass(&wc);
+    init();
     HWND hWnd = CreateWindow("MyClass", "Hello", WS_OVERLAPPEDWINDOW, 0, 0, 800, 600, NULL, NULL, h, 0);
+    if (hWnd == NULL)
+    {
+        return 0;
+    }
     ShowWindow(hWnd, csh);
-    UpdateWindow(hWnd);
-    MSG msg;
+//    UpdateWindow(hWnd);
+    MSG msg = {};
     while (GetMessage(&msg, NULL, 0, 0) > 0) {
         TranslateMessage(&msg);
         DispatchMessage(&msg);
