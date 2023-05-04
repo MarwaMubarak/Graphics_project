@@ -172,7 +172,7 @@ void mainList() {
         clippingSquareOptions();
     }
 }
-
+// testing
 LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
     HDC hdc;
     switch (m) {
