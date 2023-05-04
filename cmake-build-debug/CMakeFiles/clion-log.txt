@@ -1,4 +1,6 @@
-"C:\Program Files\JetBrains\CLion 2021.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2021.2/bin/ninja/win/ninja.exe" -G Ninja -S E:\StudioProjects\Graphics_project -B E:\StudioProjects\Graphics_project\cmake-build-debug
--- Configuring done
--- Generating done
--- Build files have been written to: E:/StudioProjects/Graphics_project/cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" C:\Users\20115\Desktop\Graphics_project
+CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
+  CMake 3.23 or higher is required.  You are running version 3.20.2
+
+
+-- Configuring incomplete, errors occurred!

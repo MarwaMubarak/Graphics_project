@@ -1,3 +1,0 @@
-E:/StudioProjects/Graphics_project/cmake-build-debug/CMakeFiles/GraphicsProject.dir
-E:/StudioProjects/Graphics_project/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/StudioProjects/Graphics_project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
