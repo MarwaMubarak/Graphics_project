@@ -1,6 +1,5 @@
-//
-// Created by 20115 on 5/4/2023.
-//
+
+#include <windows.h>
 #ifndef GRAPHICSPROJECT_CLIPPING_H
 #define GRAPHICSPROJECT_CLIPPING_H
 void PointClipping(HDC hdc, int x,int y, int xleft, int ytop, int xright, int ybottom);
