@@ -92,6 +92,12 @@
 		<Unit filename="C:/Users/20115/Desktop/Graphics_project/circle.h">
 			<Option target="GraphicsProject"/>
 		</Unit>
+		<Unit filename="C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/FloodFill.c">
+			<Option target="GraphicsProject"/>
+		</Unit>
+		<Unit filename="C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/FloodFill.h">
+			<Option target="GraphicsProject"/>
+		</Unit>
 		<Unit filename="C:/Users/20115/Desktop/Graphics_project/main.c">
 			<Option target="GraphicsProject"/>
 		</Unit>

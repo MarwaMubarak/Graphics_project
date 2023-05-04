@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/20115/Desktop/Graphics_project/Clipping.c" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/GraphicsProject.dir/Clipping.c.obj"
+  "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/FloodFill.c" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/GraphicsProject.dir/FloodFill.c.obj"
   "C:/Users/20115/Desktop/Graphics_project/Rectangle.c" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/GraphicsProject.dir/Rectangle.c.obj"
   "C:/Users/20115/Desktop/Graphics_project/circle.c" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/GraphicsProject.dir/circle.c.obj"
   "C:/Users/20115/Desktop/Graphics_project/main.c" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/GraphicsProject.dir/main.c.obj"

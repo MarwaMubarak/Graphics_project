@@ -152,6 +152,30 @@ Clipping.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicsProject.dir\build.make CMakeFiles/GraphicsProject.dir/Clipping.c.s
 .PHONY : Clipping.c.s
 
+FloodFill.obj: FloodFill.c.obj
+.PHONY : FloodFill.obj
+
+# target to build an object file
+FloodFill.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicsProject.dir\build.make CMakeFiles/GraphicsProject.dir/FloodFill.c.obj
+.PHONY : FloodFill.c.obj
+
+FloodFill.i: FloodFill.c.i
+.PHONY : FloodFill.i
+
+# target to preprocess a source file
+FloodFill.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicsProject.dir\build.make CMakeFiles/GraphicsProject.dir/FloodFill.c.i
+.PHONY : FloodFill.c.i
+
+FloodFill.s: FloodFill.c.s
+.PHONY : FloodFill.s
+
+# target to generate assembly for a file
+FloodFill.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicsProject.dir\build.make CMakeFiles/GraphicsProject.dir/FloodFill.c.s
+.PHONY : FloodFill.c.s
+
 Rectangle.obj: Rectangle.c.obj
 .PHONY : Rectangle.obj
 
@@ -236,6 +260,9 @@ help:
 	@echo ... Clipping.obj
 	@echo ... Clipping.i
 	@echo ... Clipping.s
+	@echo ... FloodFill.obj
+	@echo ... FloodFill.i
+	@echo ... FloodFill.s
 	@echo ... Rectangle.obj
 	@echo ... Rectangle.i
 	@echo ... Rectangle.s
