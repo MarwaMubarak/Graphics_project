@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/20115/Desktop/Graphics_project/Clipping.c
+circle.h
+C:/Users/20115/Desktop/Graphics_project/circle.h
+windows.h
+-
+math.h
+-
+
+C:/Users/20115/Desktop/Graphics_project/circle.h
+windows.h
+-
+

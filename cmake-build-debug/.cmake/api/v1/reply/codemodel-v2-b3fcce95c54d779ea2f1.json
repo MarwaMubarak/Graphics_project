@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "GraphicsProject::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-GraphicsProject-Debug-a32850cad726b497caec.json",
+					"jsonFile" : "target-GraphicsProject-Debug-b05d89c09d4b5d9a5099.json",
 					"name" : "GraphicsProject",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "E:/StudioProjects/Graphics_project/cmake-build-debug",
-		"source" : "E:/StudioProjects/Graphics_project"
+		"build" : "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug",
+		"source" : "C:/Users/20115/Desktop/Graphics_project"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 4
+		"minor" : 5
 	}
 }
