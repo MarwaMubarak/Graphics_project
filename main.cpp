@@ -5,6 +5,7 @@
 #include <math.h>
 #include <winnt.h >
 #include "filling_quarter.h"
+#include "floodfill.h"
 
 using namespace std;
 static int counter = 0;
@@ -28,6 +29,7 @@ void colorOptions() {
             "e. Blue\n"
             "f. Other\n";
     cin >> colorOption;
+
     if (colorOption == 'a') {
         color = RGB(255, 255, 255);
     } else if (colorOption == 'b') {
@@ -43,6 +45,7 @@ void colorOptions() {
         cout << "Enter The Color RGB Values:\n";
         int r, g, b;
         cin >> r >> g >> b;
+
         color = RGB(r, g, b);
     }
 }
@@ -209,8 +212,10 @@ void mainList() {
     } else if (option == 'm') {
 
     } else if (option == 'n') {
+        colorOptions();
 
     } else if (option == 'o') {
+        colorOptions();
 
     } else if (option == 'p') {
 
@@ -316,9 +321,24 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                 }
             } else if (option == 'm') {
 
-            } else if (option == 'n') {
+            }
+            else if (option == 'n')
+            {
+                hdc= GetDC(hWnd);
+                xe = LOWORD(lp);
+                ye = HIWORD(lp);
+                RecFloodFill(hdc,xe,ye,color, GetPixel(hdc,xe,ye));
+                counter=-1;
+                mainList();
 
-            } else if (option == 'o') {
+            }
+            else if (option == 'o') {
+                hdc= GetDC(hWnd);
+                xe = LOWORD(lp);
+                ye = HIWORD(lp);
+                NonRecFloodFill(hdc,xe,ye,color, GetPixel(hdc,xe,ye));
+                counter=-1;
+                mainList();
 
             } else if (option == 'p') {
 
