@@ -19,12 +19,12 @@ static int quarter;
 static int xs,ys,xe,ye;
 void colorOptions() {
     cout<<"Choose Color:\n"
-           "a. White\n"
-           "b. Black\n"
-           "c. Red\n"
-           "d. Green\n"
-           "e. Blue\n"
-           "f. Other\n";
+          "a. White\n"
+          "b. Black\n"
+          "c. Red\n"
+          "d. Green\n"
+          "e. Blue\n"
+          "f. Other\n";
     cin>>colorOption;
     if (colorOption == 'a') {
         color = RGB(255, 255, 255);
@@ -40,7 +40,7 @@ void colorOptions() {
 
         cout<<"Enter The Color RGB Values:\n";
         int r, g, b;
-       cin>>r>>g>>b;
+        cin>>r>>g>>b;
         color = RGB(r, g, b);
     }
 }
@@ -279,6 +279,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
             } else if (option == 'm') {
 
             } else if (option == 'n') {
+
 
             } else if (option == 'o') {
 
