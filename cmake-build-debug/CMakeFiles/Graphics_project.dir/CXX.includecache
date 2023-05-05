@@ -6,41 +6,41 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/20115/CLionProjects/Graphics_project/circle.h
+C:/Users/20115/Desktop/Graphics_project/circle.h
 windows.h
 -
 
-C:/Users/20115/CLionProjects/Graphics_project/clipping.cpp
-circle.h
-C:/Users/20115/CLionProjects/Graphics_project/circle.h
-windows.h
+C:/Users/20115/Desktop/Graphics_project/filling_quarters.cpp
+filling_quarters.h
+C:/Users/20115/Desktop/Graphics_project/filling_quarters.h
+iostream
 -
-math.h
+cmath
 -
 
-C:/Users/20115/CLionProjects/Graphics_project/floodfill.cpp
-floodfill.h
-C:/Users/20115/CLionProjects/Graphics_project/floodfill.h
-bits/stdc++.h
+C:/Users/20115/Desktop/Graphics_project/filling_quarters.h
+windows.h
+-
+
+C:/Users/20115/Desktop/Graphics_project/floodfill.h
+windows.h
+-
+
+C:/Users/20115/Desktop/Graphics_project/main.cpp
+stdio.h
 -
 Windows.h
 -
-
-C:/Users/20115/CLionProjects/Graphics_project/floodfill.h
-windows.h
+iostream
 -
-
-C:/Users/20115/CLionProjects/Graphics_project/rectangle.cpp
 circle.h
-C:/Users/20115/CLionProjects/Graphics_project/circle.h
-windows.h
--
+C:/Users/20115/Desktop/Graphics_project/circle.h
 math.h
 -
-Rectangle.h
-C:/Users/20115/CLionProjects/Graphics_project/rectangle.h
-
-C:/Users/20115/CLionProjects/Graphics_project/rectangle.h
-windows.h
+winnt.h 
 -
+filling_quarters.h
+C:/Users/20115/Desktop/Graphics_project/filling_quarters.h
+floodfill.h
+C:/Users/20115/Desktop/Graphics_project/floodfill.h
 

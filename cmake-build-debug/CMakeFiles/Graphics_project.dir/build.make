@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\20115\CLionProjects\Graphics_project
+CMAKE_SOURCE_DIR = C:\Users\20115\Desktop\Graphics_project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\20115\CLionProjects\Graphics_project\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\20115\Desktop\Graphics_project\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Graphics_project.dir/depend.make
@@ -66,69 +66,82 @@ include CMakeFiles/Graphics_project.dir/progress.make
 include CMakeFiles/Graphics_project.dir/flags.make
 
 CMakeFiles/Graphics_project.dir/main.cpp.obj: CMakeFiles/Graphics_project.dir/flags.make
-CMakeFiles/Graphics_project.dir/main.cpp.obj: C:/Users/20115/CLionProjects/Graphics_project/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\20115\CLionProjects\Graphics_project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Graphics_project.dir/main.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Graphics_project.dir\main.cpp.obj -c C:\Users\20115\CLionProjects\Graphics_project\main.cpp
+CMakeFiles/Graphics_project.dir/main.cpp.obj: C:/Users/20115/Desktop/Graphics_project/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Graphics_project.dir/main.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Graphics_project.dir\main.cpp.obj -c C:\Users\20115\Desktop\Graphics_project\main.cpp
 
 CMakeFiles/Graphics_project.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Graphics_project.dir/main.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\20115\CLionProjects\Graphics_project\main.cpp > CMakeFiles\Graphics_project.dir\main.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\20115\Desktop\Graphics_project\main.cpp > CMakeFiles\Graphics_project.dir\main.cpp.i
 
 CMakeFiles/Graphics_project.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Graphics_project.dir/main.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\20115\CLionProjects\Graphics_project\main.cpp -o CMakeFiles\Graphics_project.dir\main.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\20115\Desktop\Graphics_project\main.cpp -o CMakeFiles\Graphics_project.dir\main.cpp.s
 
 CMakeFiles/Graphics_project.dir/circle.cpp.obj: CMakeFiles/Graphics_project.dir/flags.make
-CMakeFiles/Graphics_project.dir/circle.cpp.obj: C:/Users/20115/CLionProjects/Graphics_project/circle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\20115\CLionProjects\Graphics_project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Graphics_project.dir/circle.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Graphics_project.dir\circle.cpp.obj -c C:\Users\20115\CLionProjects\Graphics_project\circle.cpp
+CMakeFiles/Graphics_project.dir/circle.cpp.obj: C:/Users/20115/Desktop/Graphics_project/circle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Graphics_project.dir/circle.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Graphics_project.dir\circle.cpp.obj -c C:\Users\20115\Desktop\Graphics_project\circle.cpp
 
 CMakeFiles/Graphics_project.dir/circle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Graphics_project.dir/circle.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\20115\CLionProjects\Graphics_project\circle.cpp > CMakeFiles\Graphics_project.dir\circle.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\20115\Desktop\Graphics_project\circle.cpp > CMakeFiles\Graphics_project.dir\circle.cpp.i
 
 CMakeFiles/Graphics_project.dir/circle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Graphics_project.dir/circle.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\20115\CLionProjects\Graphics_project\circle.cpp -o CMakeFiles\Graphics_project.dir\circle.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\20115\Desktop\Graphics_project\circle.cpp -o CMakeFiles\Graphics_project.dir\circle.cpp.s
 
 CMakeFiles/Graphics_project.dir/clipping.cpp.obj: CMakeFiles/Graphics_project.dir/flags.make
-CMakeFiles/Graphics_project.dir/clipping.cpp.obj: C:/Users/20115/CLionProjects/Graphics_project/clipping.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\20115\CLionProjects\Graphics_project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Graphics_project.dir/clipping.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Graphics_project.dir\clipping.cpp.obj -c C:\Users\20115\CLionProjects\Graphics_project\clipping.cpp
+CMakeFiles/Graphics_project.dir/clipping.cpp.obj: C:/Users/20115/Desktop/Graphics_project/clipping.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Graphics_project.dir/clipping.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Graphics_project.dir\clipping.cpp.obj -c C:\Users\20115\Desktop\Graphics_project\clipping.cpp
 
 CMakeFiles/Graphics_project.dir/clipping.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Graphics_project.dir/clipping.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\20115\CLionProjects\Graphics_project\clipping.cpp > CMakeFiles\Graphics_project.dir\clipping.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\20115\Desktop\Graphics_project\clipping.cpp > CMakeFiles\Graphics_project.dir\clipping.cpp.i
 
 CMakeFiles/Graphics_project.dir/clipping.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Graphics_project.dir/clipping.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\20115\CLionProjects\Graphics_project\clipping.cpp -o CMakeFiles\Graphics_project.dir\clipping.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\20115\Desktop\Graphics_project\clipping.cpp -o CMakeFiles\Graphics_project.dir\clipping.cpp.s
 
 CMakeFiles/Graphics_project.dir/floodfill.cpp.obj: CMakeFiles/Graphics_project.dir/flags.make
-CMakeFiles/Graphics_project.dir/floodfill.cpp.obj: C:/Users/20115/CLionProjects/Graphics_project/floodfill.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\20115\CLionProjects\Graphics_project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Graphics_project.dir/floodfill.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Graphics_project.dir\floodfill.cpp.obj -c C:\Users\20115\CLionProjects\Graphics_project\floodfill.cpp
+CMakeFiles/Graphics_project.dir/floodfill.cpp.obj: C:/Users/20115/Desktop/Graphics_project/floodfill.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Graphics_project.dir/floodfill.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Graphics_project.dir\floodfill.cpp.obj -c C:\Users\20115\Desktop\Graphics_project\floodfill.cpp
 
 CMakeFiles/Graphics_project.dir/floodfill.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Graphics_project.dir/floodfill.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\20115\CLionProjects\Graphics_project\floodfill.cpp > CMakeFiles\Graphics_project.dir\floodfill.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\20115\Desktop\Graphics_project\floodfill.cpp > CMakeFiles\Graphics_project.dir\floodfill.cpp.i
 
 CMakeFiles/Graphics_project.dir/floodfill.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Graphics_project.dir/floodfill.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\20115\CLionProjects\Graphics_project\floodfill.cpp -o CMakeFiles\Graphics_project.dir\floodfill.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\20115\Desktop\Graphics_project\floodfill.cpp -o CMakeFiles\Graphics_project.dir\floodfill.cpp.s
 
 CMakeFiles/Graphics_project.dir/rectangle.cpp.obj: CMakeFiles/Graphics_project.dir/flags.make
-CMakeFiles/Graphics_project.dir/rectangle.cpp.obj: C:/Users/20115/CLionProjects/Graphics_project/rectangle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\20115\CLionProjects\Graphics_project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Graphics_project.dir/rectangle.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Graphics_project.dir\rectangle.cpp.obj -c C:\Users\20115\CLionProjects\Graphics_project\rectangle.cpp
+CMakeFiles/Graphics_project.dir/rectangle.cpp.obj: C:/Users/20115/Desktop/Graphics_project/rectangle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Graphics_project.dir/rectangle.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Graphics_project.dir\rectangle.cpp.obj -c C:\Users\20115\Desktop\Graphics_project\rectangle.cpp
 
 CMakeFiles/Graphics_project.dir/rectangle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Graphics_project.dir/rectangle.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\20115\CLionProjects\Graphics_project\rectangle.cpp > CMakeFiles\Graphics_project.dir\rectangle.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\20115\Desktop\Graphics_project\rectangle.cpp > CMakeFiles\Graphics_project.dir\rectangle.cpp.i
 
 CMakeFiles/Graphics_project.dir/rectangle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Graphics_project.dir/rectangle.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\20115\CLionProjects\Graphics_project\rectangle.cpp -o CMakeFiles\Graphics_project.dir\rectangle.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\20115\Desktop\Graphics_project\rectangle.cpp -o CMakeFiles\Graphics_project.dir\rectangle.cpp.s
+
+CMakeFiles/Graphics_project.dir/filling_quarters.cpp.obj: CMakeFiles/Graphics_project.dir/flags.make
+CMakeFiles/Graphics_project.dir/filling_quarters.cpp.obj: C:/Users/20115/Desktop/Graphics_project/filling_quarters.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Graphics_project.dir/filling_quarters.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Graphics_project.dir\filling_quarters.cpp.obj -c C:\Users\20115\Desktop\Graphics_project\filling_quarters.cpp
+
+CMakeFiles/Graphics_project.dir/filling_quarters.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Graphics_project.dir/filling_quarters.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\20115\Desktop\Graphics_project\filling_quarters.cpp > CMakeFiles\Graphics_project.dir\filling_quarters.cpp.i
+
+CMakeFiles/Graphics_project.dir/filling_quarters.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Graphics_project.dir/filling_quarters.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\20115\Desktop\Graphics_project\filling_quarters.cpp -o CMakeFiles\Graphics_project.dir\filling_quarters.cpp.s
 
 # Object files for target Graphics_project
 Graphics_project_OBJECTS = \
@@ -136,7 +149,8 @@ Graphics_project_OBJECTS = \
 "CMakeFiles/Graphics_project.dir/circle.cpp.obj" \
 "CMakeFiles/Graphics_project.dir/clipping.cpp.obj" \
 "CMakeFiles/Graphics_project.dir/floodfill.cpp.obj" \
-"CMakeFiles/Graphics_project.dir/rectangle.cpp.obj"
+"CMakeFiles/Graphics_project.dir/rectangle.cpp.obj" \
+"CMakeFiles/Graphics_project.dir/filling_quarters.cpp.obj"
 
 # External object files for target Graphics_project
 Graphics_project_EXTERNAL_OBJECTS =
@@ -146,11 +160,12 @@ Graphics_project.exe: CMakeFiles/Graphics_project.dir/circle.cpp.obj
 Graphics_project.exe: CMakeFiles/Graphics_project.dir/clipping.cpp.obj
 Graphics_project.exe: CMakeFiles/Graphics_project.dir/floodfill.cpp.obj
 Graphics_project.exe: CMakeFiles/Graphics_project.dir/rectangle.cpp.obj
+Graphics_project.exe: CMakeFiles/Graphics_project.dir/filling_quarters.cpp.obj
 Graphics_project.exe: CMakeFiles/Graphics_project.dir/build.make
 Graphics_project.exe: CMakeFiles/Graphics_project.dir/linkLibs.rsp
 Graphics_project.exe: CMakeFiles/Graphics_project.dir/objects1.rsp
 Graphics_project.exe: CMakeFiles/Graphics_project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\20115\CLionProjects\Graphics_project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Graphics_project.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Graphics_project.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Graphics_project.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -162,6 +177,6 @@ CMakeFiles/Graphics_project.dir/clean:
 .PHONY : CMakeFiles/Graphics_project.dir/clean
 
 CMakeFiles/Graphics_project.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\20115\CLionProjects\Graphics_project C:\Users\20115\CLionProjects\Graphics_project C:\Users\20115\CLionProjects\Graphics_project\cmake-build-debug C:\Users\20115\CLionProjects\Graphics_project\cmake-build-debug C:\Users\20115\CLionProjects\Graphics_project\cmake-build-debug\CMakeFiles\Graphics_project.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\20115\Desktop\Graphics_project C:\Users\20115\Desktop\Graphics_project C:\Users\20115\Desktop\Graphics_project\cmake-build-debug C:\Users\20115\Desktop\Graphics_project\cmake-build-debug C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\CMakeFiles\Graphics_project.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Graphics_project.dir/depend
 

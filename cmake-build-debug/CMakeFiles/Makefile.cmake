@@ -31,7 +31,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-3.26/Modules/Platform/Windows.cmake"
   "C:/Program Files/CMake/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake"
   "C:/Program Files/CMake/share/cmake-3.26/Modules/ProcessorCount.cmake"
-  "C:/Users/20115/CLionProjects/Graphics_project/CMakeLists.txt"
+  "C:/Users/20115/Desktop/Graphics_project/CMakeLists.txt"
   "CMakeFiles/3.26.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.26.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.26.3/CMakeRCCompiler.cmake"

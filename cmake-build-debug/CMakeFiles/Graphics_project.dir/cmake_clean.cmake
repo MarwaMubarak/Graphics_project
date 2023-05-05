@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Graphics_project.dir/circle.cpp.obj"
   "CMakeFiles/Graphics_project.dir/clipping.cpp.obj"
+  "CMakeFiles/Graphics_project.dir/filling_quarters.cpp.obj"
   "CMakeFiles/Graphics_project.dir/floodfill.cpp.obj"
   "CMakeFiles/Graphics_project.dir/main.cpp.obj"
   "CMakeFiles/Graphics_project.dir/rectangle.cpp.obj"
