@@ -4,7 +4,7 @@
 #include "circle.h"
 #include <math.h>
 #include <winnt.h >
-#include "filling_quarter.h"
+#include "filling_quarters.h"
 #include "floodfill.h"
 
 using namespace std;
@@ -300,7 +300,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     hdc = GetDC(hWnd);
                     xe = LOWORD(lp);
                     ye = HIWORD(lp);
-//                    draw_circul_line(hdc, xs, ys, xe, ye, RGB(4, 41, 64), quarter);
+                 draw_circul_line(hdc, xs, ys, xe, ye, RGB(4, 41, 64), quarter);
                     ReleaseDC(hWnd, hdc);
                     counter = -1;
                     mainList();
@@ -314,7 +314,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     hdc = GetDC(hWnd);
                     xe = LOWORD(lp);
                     ye = HIWORD(lp);
-//                    draw_circul_circuler(hdc, xs, ys, xe, ye, RGB(4, 41, 64), quarter);
+                    draw_circul_circuler(hdc, xs, ys, xe, ye, RGB(4, 41, 64), quarter);
                     ReleaseDC(hWnd, hdc);
                     counter = -1;
                     mainList();
