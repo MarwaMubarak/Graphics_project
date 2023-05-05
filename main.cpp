@@ -7,7 +7,7 @@
 
 using namespace std;
 static int counter =0;
-static COLORREF color= RGB(0,255,0);
+static COLORREF color= RGB(0,0,255);
 static char colorOption;
 static char lineOption;
 static char circleOption;
@@ -17,6 +17,33 @@ static char clippingSquareOption;
 static char option='g';
 static int quarter;
 static int xs,ys,xe,ye;
+void colorOptions() {
+    cout<<"Choose Color:\n"
+           "a. White\n"
+           "b. Black\n"
+           "c. Red\n"
+           "d. Green\n"
+           "e. Blue\n"
+           "f. Other\n";
+    cin>>colorOption;
+    if (colorOption == 'a') {
+        color = RGB(255, 255, 255);
+    } else if (colorOption == 'b') {
+        color = RGB(0, 0, 0);
+    } else if (colorOption == 'c') {
+        color = RGB(255, 0, 0);
+    } else if (colorOption == 'd') {
+        color = RGB(0, 255, 0);
+    } else if (colorOption == 'e') {
+        color = RGB(0, 0, 255);
+    } else if (colorOption == 'f') {
+
+        cout<<"Enter The Color RGB Values:\n";
+        int r, g, b;
+       cin>>r>>g>>b;
+        color = RGB(r, g, b);
+    }
+}
 
 struct COLOR{
     int r = 255, g = 255, b =255;
@@ -150,6 +177,7 @@ void mainList() {
 
     } else if (option == 'g') {
         circleOptions();
+        colorOptions();
 
     } else if (option == 'h') {
         quarterInput();
@@ -194,13 +222,14 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                 InvalidateRect(hWnd, NULL, TRUE);
                 UpdateWindow(hWnd);
                 mainList();
-                break;
+                counter=-1;
             } else if (option == 'b') {
                 cursorInit();
                 SetCursor(cursor);
                 InvalidateRect(hWnd, NULL, TRUE);
                 UpdateWindow(hWnd);
                 mainList();
+                counter=-1;
             } else if (option == 'c') {
 
             } else if (option == 'd') {
