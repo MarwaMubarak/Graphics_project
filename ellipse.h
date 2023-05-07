@@ -9,7 +9,11 @@
 #include <windows.h>
 
 void DrawCartesianEllipse(HDC hdc, int xc, int yc, int a, int b, COLORREF c);
+
 void DrawPolarEllipse(HDC hdc, int xc, int yc, int a, int b, COLORREF c);
-void Draw4Points(HDC hdc, int xc, int yc, int x, int y,COLORREF c);
+
+void Draw4Points(HDC hdc, int xc, int yc, int x, int y, COLORREF c);
+
+void DrawMidpointEllipse(HDC hdc, int xc, int yc, int a, int b, COLORREF c);
 
 #endif //GRAPHICS_PROJECT_ELLIPSE_H
