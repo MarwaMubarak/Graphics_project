@@ -222,8 +222,11 @@ void mainList() {
     } else if (option == 'j') {
 
     } else if (option == 'k') {
-
+        colorOptions();
+        takeQuarter();
     } else if (option == 'l') {
+        colorOptions();
+        takeQuarter();
 
     } else if (option == 'm') {
 
@@ -236,6 +239,7 @@ void mainList() {
     } else if (option == 'p') {
 
     } else if (option == 'q') {
+        colorOptions();
         ellipseOptions();
     } else if (option == 'r') {
         colorOptions();
@@ -314,7 +318,8 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     hdc = GetDC(hWnd);
                     xe = LOWORD(lp);
                     ye = HIWORD(lp);
-                    draw_circul_line(hdc, xs, ys, xe, ye, RGB(4, 41, 64), quarter);
+                    draw_circul_line(hdc, xs, ys, xe, ye, color, quarter);
+
                     ReleaseDC(hWnd, hdc);
                     counter = -1;
                     mainList();
@@ -328,7 +333,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     hdc = GetDC(hWnd);
                     xe = LOWORD(lp);
                     ye = HIWORD(lp);
-                    draw_circul_circuler(hdc, xs, ys, xe, ye, RGB(4, 41, 64), quarter);
+                    draw_circul_circuler(hdc, xs, ys, xe, ye, color, quarter);
                     ReleaseDC(hWnd, hdc);
                     counter = -1;
                     mainList();
@@ -406,12 +411,15 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     y3 = HIWORD(lp);
                     hdc = GetDC(hWnd);
 
-                    int a = (int) sqrt((xs - x2) * (xs - x2) + (ys - y2) * (ys - y2));
-                    int b = (int) sqrt((xs - x3) * (xs - x3) + (ys - y3) * (ys - y3));
-                    if (ellipseOption == 'a')
-                        DrawCartesianEllipse(hdc, xs, ys, a, b, RGB(4, 41, 64));
-                    else if (ellipseOption == 'b')
-                        DrawPolarEllipse(hdc, xs, ys, a, b, RGB(4, 41, 64));
+
+                    int a = (int)sqrt((xs - x2) * (xs - x2) + (ys - y2) * (ys - y2));
+                    int b = (int)sqrt((xs - x3) * (xs - x3) + (ys - y3) * (ys - y3));
+                    if(ellipseOption=='a')
+                        DrawCartesianEllipse(hdc, xs, ys, a, b, color);
+                    else if(ellipseOption=='b')
+                        DrawPolarEllipse(hdc, xs, ys, a, b, color);
+                    else
+                        DrawMidpointEllipse(hdc, xs, ys, a, b, color);
 
                     ReleaseDC(hWnd, hdc);
                     counter = -1;
