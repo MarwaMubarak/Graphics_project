@@ -46,3 +46,37 @@ void DrawPolarEllipse(HDC hdc, int xc, int yc, int a, int b, COLORREF c) {
         theta += d_theta;
     }
 }
+
+void DrawMidpointEllipse(HDC hdc, int xc, int yc, int a, int b, COLORREF c) {
+    int x = 0, y = b;
+    int asqrt = a * a;
+    int bsqrt = b * b;
+    Draw4Points(hdc, xc, yc, x, y, c);
+
+    double d = bsqrt - asqrt * b + asqrt / 4;
+    while ((x + 1) * bsqrt < (y - 0.5) * asqrt) {
+        Draw4Points(hdc, xc, yc, x, y, c);
+        x++;
+        if (d > 0) {
+            y--;
+            d += bsqrt* (2 * x + 3) - asqrt * (2 * y - 2);
+        }
+        else
+            d += bsqrt * (2 * x + 3);
+
+    }
+
+    d = bsqrt * (x + 0.5)* (x + 0.5) + asqrt * (y - 1) * (y - 1) - asqrt * bsqrt;
+    while (y > 0) {
+
+        Draw4Points(hdc, xc, yc, x, y, c);
+        y--;
+        if (d < 0) {
+            d += bsqrt * (2 * x + 2) + asqrt * (3 - 2 * y);
+            x++;
+        }else
+            d += asqrt * (3 - 2 * y);
+
+    }
+
+}
