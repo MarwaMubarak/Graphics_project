@@ -7,8 +7,6 @@ void DrawSquare(HDC hdc,int & x, int& y, int& xx, int& yy, COLORREF color) {
     int i, j;
     int len=(int)sqrt((x - xx) * (x - xx) + (y - yy) * (y - yy));
     int xc=x,yc=y;
-    x=xc-len; y=yc-len;
-    xx=xc+len; yy=yc+len;
     for (i = x; i <= x + len; i++) {
         for (j = y; j <= y + len; j++) {
             if(i==x||i==x+len||j==y||j==y+len) {
@@ -16,5 +14,7 @@ void DrawSquare(HDC hdc,int & x, int& y, int& xx, int& yy, COLORREF color) {
             }
         }
     }
+    x=xc-len; y=yc-len;
+    xx=xc+len; yy=yc+len;
 }
 #include "square.h"

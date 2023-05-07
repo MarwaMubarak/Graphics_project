@@ -10,9 +10,12 @@
 #include "clipping.h"
 #include "square.h"
 #include "ellipse.h"
+#include "vector"
 
 using namespace std;
 static int counter = 0;
+static int polygonN;
+vector<POINT>myPoint;
 static COLORREF color = RGB(0, 0, 255);
 static char colorOption;
 static char lineOption;
@@ -143,6 +146,11 @@ void clippingRecOptions() {
             "b. Line\n"
             "c. Polygon" << endl;
     cin >> clippingRecOption;
+    if(clippingRecOption=='c')
+    {
+        cout<<"how many  point's polygon? ";
+        cin>>polygonN;
+    }
 }
 
 void clippingSquareOptions() {
@@ -307,7 +315,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     hdc = GetDC(hWnd);
                     xe = LOWORD(lp);
                     ye = HIWORD(lp);
-                 draw_circul_line(hdc, xs, ys, xe, ye, RGB(4, 41, 64), quarter);
+                    draw_circul_line(hdc, xs, ys, xe, ye, RGB(4, 41, 64), quarter);
                     ReleaseDC(hWnd, hdc);
                     counter = -1;
                     mainList();
@@ -328,123 +336,62 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                 }
             } else if (option == 'm') {
 
-            }
-            else if (option == 'n')
-            {
-                hdc= GetDC(hWnd);
+            } else if (option == 'n') {
+                hdc = GetDC(hWnd);
                 xe = LOWORD(lp);
                 ye = HIWORD(lp);
-                RecFloodFill(hdc,xe,ye,color, GetPixel(hdc,xe,ye));
-                counter=-1;
+                RecFloodFill(hdc, xe, ye, color, GetPixel(hdc, xe, ye));
+                counter = -1;
                 mainList();
 
-            }
-            else if (option == 'o')
-            {
-                hdc= GetDC(hWnd);
+            } else if (option == 'o') {
+                hdc = GetDC(hWnd);
                 xe = LOWORD(lp);
                 ye = HIWORD(lp);
-                NonRecFloodFill(hdc,xe,ye,color, GetPixel(hdc,xe,ye));
-                counter=-1;
+                NonRecFloodFill(hdc, xe, ye, color, GetPixel(hdc, xe, ye));
+                counter = -1;
                 mainList();
 
-            }
-            else if (option == 'p') {
+            } else if (option == 'p') {
 
-            } else if (option == 'q')
-            {
+            } else if (option == 'q') {
                 if (counter % 3 == 0) {
                     xs = LOWORD(lp);
                     ys = HIWORD(lp);
-                }
-                else if (counter % 3 == 1) {
+                } else if (counter % 3 == 1) {
                     x2 = LOWORD(lp);
                     y2 = HIWORD(lp);
-                }
-                else {
+                } else {
                     x3 = LOWORD(lp);
                     y3 = HIWORD(lp);
                     hdc = GetDC(hWnd);
 
-                    int a = (int)sqrt((xs - x2) * (xs - x2) + (ys - y2) * (ys - y2));
-                    int b = (int)sqrt((xs - x3) * (xs - x3) + (ys - y3) * (ys - y3));
-                    if(ellipseOption=='a')
+                    int a = (int) sqrt((xs - x2) * (xs - x2) + (ys - y2) * (ys - y2));
+                    int b = (int) sqrt((xs - x3) * (xs - x3) + (ys - y3) * (ys - y3));
+                    if (ellipseOption == 'a')
                         DrawCartesianEllipse(hdc, xs, ys, a, b, RGB(4, 41, 64));
-                    else if(ellipseOption=='b')
+                    else if (ellipseOption == 'b')
                         DrawPolarEllipse(hdc, xs, ys, a, b, RGB(4, 41, 64));
 //                    else
 
                     ReleaseDC(hWnd, hdc);
-                    counter=-1;
+                    counter = -1;
                     mainList();
 
                 }
-            }
-            else if (option == 'r')
-            {
+            } else if (option == 'r') {
 
-                if (counter % 5 == 0) {
-                    xs = LOWORD(lp);
-                    ys = HIWORD(lp);
-                }
-                else if(counter%5==1)
-                {
-                    hdc= GetDC(hWnd);
-                    xe = LOWORD(lp);
-                    ye = HIWORD(lp);
-                    drawRectangle(hdc,xs,ys,xe,ye);
-                    ReleaseDC(hWnd, hdc);
-
-                }
-                else if(counter%5==2) {
-                    hdc = GetDC(hWnd);
-                    x = LOWORD(lp);
-                    y = HIWORD(lp);
-                    if (clippingRecOption == 'a') {
-
-                        PointClipping(hdc, x, y, xs, ys, xe, ye, color);
-                        ReleaseDC(hWnd, hdc);
-                        counter=-1;
-                        mainList();
-                    }
-                }
-                else if(counter%5==3)
-                {
-                    hdc= GetDC(hWnd);
-                    xx = LOWORD(lp);
-                    yy = HIWORD(lp);
-                     if (clippingRecOption == 'b')
-                    {
-                        LineClipping(hdc, x, y, xx, yy, xs,ys,xe,ye,color);
-                        ReleaseDC(hWnd, hdc);
-                        counter=-1;
-                        mainList();
-                    }
-                }
-                else if(counter%5==4)
-                {
-
-
-
-                    counter--;
-                }
-
-                }
-            else if (option == 's')
-            {
                 if (counter % 4 == 0) {
                     xs = LOWORD(lp);
                     ys = HIWORD(lp);
-                }
-                else if(counter%4==1)
-                {
-                    hdc= GetDC(hWnd);
+                } else if (counter % 4 == 1) {
+                    hdc = GetDC(hWnd);
                     xe = LOWORD(lp);
                     ye = HIWORD(lp);
-                    DrawSquare(hdc,xs,ys,xe,ye,color);
+                    drawRectangle(hdc, xs, ys, xe, ye);
                     ReleaseDC(hWnd, hdc);
-                }
-                else if(counter%4==2) {
+
+                } else if (counter % 4 == 2) {
                     hdc = GetDC(hWnd);
                     x = LOWORD(lp);
                     y = HIWORD(lp);
@@ -452,26 +399,76 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
 
                         PointClipping(hdc, x, y, xs, ys, xe, ye, color);
                         ReleaseDC(hWnd, hdc);
-                        counter=-1;
+                        counter = -1;
+                        mainList();
+                    }
+                    if(clippingRecOption=='c')
+                    {
+                        myPoint.push_back({x,y});
+                        if(myPoint.size()==polygonN)
+                        {
+                            PolygonClip(hdc,myPoint,polygonN ,xs, ys, xe ,ye,color);
+                            counter = -1;
+                            mainList();
+                        }
+                        counter--;
+                    }
+
+
+                } else if (counter % 4 == 3) {
+                    hdc = GetDC(hWnd);
+                    xx = LOWORD(lp);
+                    yy = HIWORD(lp);
+                    if (clippingRecOption == 'b') {
+                        LineClipping(hdc, x, y, xx, yy, xs, ys, xe, ye, color);
+                        ReleaseDC(hWnd, hdc);
+                        counter = -1;
                         mainList();
                     }
                 }
-                else if(counter%4==3)
+
+            }
+            else if (option == 's')
+            {
+                if (counter % 4 == 0)
                 {
-                    hdc= GetDC(hWnd);
+                    xs = LOWORD(lp);
+                    ys = HIWORD(lp);
+                }
+                else if (counter % 4 == 1)
+                {
+                    hdc = GetDC(hWnd);
+                    xe = LOWORD(lp);
+                    ye = HIWORD(lp);
+                    DrawSquare(hdc, xs, ys, xe, ye, color);
+                    ReleaseDC(hWnd, hdc);
+                }
+                else if (counter % 4 == 2) {
+                    hdc = GetDC(hWnd);
+                    x = LOWORD(lp);
+                    y = HIWORD(lp);
+                    if (clippingSquareOption == 'a')
+                    {
+                        PointClipping(hdc, x, y, xs, ys, xe, ye, color);
+                        ReleaseDC(hWnd, hdc);
+                        counter = -1;
+                        mainList();
+                    }
+                }
+                else if (counter % 4 == 3) {
+                    hdc = GetDC(hWnd);
                     xx = LOWORD(lp);
                     yy = HIWORD(lp);
-                    if (clippingRecOption == 'b')
-                    {
-                        LineClipping(hdc, x, y, xx, yy, xs,ys,xe,ye,color);
+                    if (clippingSquareOption == 'b') {
+                        LineClipping(hdc, x, y, xx, yy, xs, ys, xe, ye, color);
                         ReleaseDC(hWnd, hdc);
-                        counter=-1;
+                        counter = -1;
                         mainList();
                     }
                 }
             }
-            counter++;
         }
+            counter++;
             break;
         case WM_CLOSE:
             DestroyWindow(hWnd);

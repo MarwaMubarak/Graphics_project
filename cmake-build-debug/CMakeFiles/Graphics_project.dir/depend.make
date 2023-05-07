@@ -23,6 +23,7 @@ CMakeFiles/Graphics_project.dir/line.cpp.obj: \
 CMakeFiles/Graphics_project.dir/main.cpp.obj: \
  C:/Users/20115/Desktop/Graphics_project/circle.h \
  C:/Users/20115/Desktop/Graphics_project/clipping.h \
+ C:/Users/20115/Desktop/Graphics_project/ellipse.h \
  C:/Users/20115/Desktop/Graphics_project/filling_quarters.h \
  C:/Users/20115/Desktop/Graphics_project/floodfill.h \
  C:/Users/20115/Desktop/Graphics_project/main.cpp \
