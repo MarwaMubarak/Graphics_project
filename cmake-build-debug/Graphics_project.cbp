@@ -92,6 +92,12 @@
 		<Unit filename="C:/Users/20115/Desktop/Graphics_project/clipping.h">
 			<Option target="Graphics_project"/>
 		</Unit>
+		<Unit filename="C:/Users/20115/Desktop/Graphics_project/ellipse.cpp">
+			<Option target="Graphics_project"/>
+		</Unit>
+		<Unit filename="C:/Users/20115/Desktop/Graphics_project/ellipse.h">
+			<Option target="Graphics_project"/>
+		</Unit>
 		<Unit filename="C:/Users/20115/Desktop/Graphics_project/filling_quarters.cpp">
 			<Option target="Graphics_project"/>
 		</Unit>
@@ -104,6 +110,12 @@
 		<Unit filename="C:/Users/20115/Desktop/Graphics_project/floodfill.h">
 			<Option target="Graphics_project"/>
 		</Unit>
+		<Unit filename="C:/Users/20115/Desktop/Graphics_project/line.cpp">
+			<Option target="Graphics_project"/>
+		</Unit>
+		<Unit filename="C:/Users/20115/Desktop/Graphics_project/line.h">
+			<Option target="Graphics_project"/>
+		</Unit>
 		<Unit filename="C:/Users/20115/Desktop/Graphics_project/main.cpp">
 			<Option target="Graphics_project"/>
 		</Unit>
@@ -111,6 +123,12 @@
 			<Option target="Graphics_project"/>
 		</Unit>
 		<Unit filename="C:/Users/20115/Desktop/Graphics_project/rectangle.h">
+			<Option target="Graphics_project"/>
+		</Unit>
+		<Unit filename="C:/Users/20115/Desktop/Graphics_project/square.cpp">
+			<Option target="Graphics_project"/>
+		</Unit>
+		<Unit filename="C:/Users/20115/Desktop/Graphics_project/square.h">
 			<Option target="Graphics_project"/>
 		</Unit>
 		<Unit filename="C:/Users/20115/Desktop/Graphics_project/CMakeLists.txt">

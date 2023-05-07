@@ -1,6 +1,7 @@
 #include "circle.h"
 #include <windows.h>
 #include <math.h>
+#include "line.h"
 void VIntersect(double xs, double ys, double xe, double ye, int x, double *xi, double *yi) {
     *xi = x;
     *yi = ys + (x - xs) * (ye - ys) / (xe - xs);
@@ -25,13 +26,13 @@ union OutCode GetOutCode(double x, double y, int xleft, int ytop, int xright, in
     if (y < ytop)out.top = 1; else if (y > ybottom)out.bottom = 1;
     return out;
 }
-void PointClipping(HDC hdc, int x,int y, int xleft, int ytop, int xright, int ybottom)
+void PointClipping(HDC hdc, int x,int y, int xleft, int ytop, int xright, int ybottom,COLORREF c)
 {
     if(x>=xleft && y>=ytop && x<=xright && y<=ybottom)
-        SetPixel(hdc,x,y,RGB(0, 0, 136));
+        SetPixel(hdc,x,y,c);
 
 }
-void LineClipping(HDC hdc, int xs, int ys, int xe, int ye, int xleft, int ytop, int xright, int ybottom) {
+void LineClipping(HDC hdc, int xs, int ys, int xe, int ye, int xleft, int ytop, int xright, int ybottom,COLORREF c) {
     double x1 = xs, y1 = ys, x2 = xe, y2 = ye;
     union OutCode out1 = GetOutCode(x1, y1, xleft, ytop, xright, ybottom);
     union OutCode out2 = GetOutCode(x2, y2, xleft, ytop, xright, ybottom);
@@ -56,7 +57,7 @@ void LineClipping(HDC hdc, int xs, int ys, int xe, int ye, int xleft, int ytop, 
         }
     }
     if (!out1.All && !out2.All) {
-        //DrawLineDDA(hdc, round(x1), round(y1), round(x2), round(y2), RGB(0, 0, 136));
+        DrawLineDDA(hdc, round(x1), round(y1), round(x2), round(y2), c);
     }
 }
 

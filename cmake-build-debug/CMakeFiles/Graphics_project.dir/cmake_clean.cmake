@@ -1,10 +1,13 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Graphics_project.dir/circle.cpp.obj"
   "CMakeFiles/Graphics_project.dir/clipping.cpp.obj"
+  "CMakeFiles/Graphics_project.dir/ellipse.cpp.obj"
   "CMakeFiles/Graphics_project.dir/filling_quarters.cpp.obj"
   "CMakeFiles/Graphics_project.dir/floodfill.cpp.obj"
+  "CMakeFiles/Graphics_project.dir/line.cpp.obj"
   "CMakeFiles/Graphics_project.dir/main.cpp.obj"
   "CMakeFiles/Graphics_project.dir/rectangle.cpp.obj"
+  "CMakeFiles/Graphics_project.dir/square.cpp.obj"
   "Graphics_project.exe"
   "Graphics_project.exe.manifest"
   "Graphics_project.pdb"

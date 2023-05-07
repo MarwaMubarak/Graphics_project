@@ -176,6 +176,30 @@ clipping.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/clipping.cpp.s
 .PHONY : clipping.cpp.s
 
+ellipse.obj: ellipse.cpp.obj
+.PHONY : ellipse.obj
+
+# target to build an object file
+ellipse.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/ellipse.cpp.obj
+.PHONY : ellipse.cpp.obj
+
+ellipse.i: ellipse.cpp.i
+.PHONY : ellipse.i
+
+# target to preprocess a source file
+ellipse.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/ellipse.cpp.i
+.PHONY : ellipse.cpp.i
+
+ellipse.s: ellipse.cpp.s
+.PHONY : ellipse.s
+
+# target to generate assembly for a file
+ellipse.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/ellipse.cpp.s
+.PHONY : ellipse.cpp.s
+
 filling_quarters.obj: filling_quarters.cpp.obj
 .PHONY : filling_quarters.obj
 
@@ -223,6 +247,30 @@ floodfill.s: floodfill.cpp.s
 floodfill.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/floodfill.cpp.s
 .PHONY : floodfill.cpp.s
+
+line.obj: line.cpp.obj
+.PHONY : line.obj
+
+# target to build an object file
+line.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/line.cpp.obj
+.PHONY : line.cpp.obj
+
+line.i: line.cpp.i
+.PHONY : line.i
+
+# target to preprocess a source file
+line.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/line.cpp.i
+.PHONY : line.cpp.i
+
+line.s: line.cpp.s
+.PHONY : line.s
+
+# target to generate assembly for a file
+line.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/line.cpp.s
+.PHONY : line.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -272,6 +320,30 @@ rectangle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/rectangle.cpp.s
 .PHONY : rectangle.cpp.s
 
+square.obj: square.cpp.obj
+.PHONY : square.obj
+
+# target to build an object file
+square.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/square.cpp.obj
+.PHONY : square.cpp.obj
+
+square.i: square.cpp.i
+.PHONY : square.i
+
+# target to preprocess a source file
+square.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/square.cpp.i
+.PHONY : square.cpp.i
+
+square.s: square.cpp.s
+.PHONY : square.s
+
+# target to generate assembly for a file
+square.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/square.cpp.s
+.PHONY : square.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -287,18 +359,27 @@ help:
 	@echo ... clipping.obj
 	@echo ... clipping.i
 	@echo ... clipping.s
+	@echo ... ellipse.obj
+	@echo ... ellipse.i
+	@echo ... ellipse.s
 	@echo ... filling_quarters.obj
 	@echo ... filling_quarters.i
 	@echo ... filling_quarters.s
 	@echo ... floodfill.obj
 	@echo ... floodfill.i
 	@echo ... floodfill.s
+	@echo ... line.obj
+	@echo ... line.i
+	@echo ... line.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
 	@echo ... rectangle.obj
 	@echo ... rectangle.i
 	@echo ... rectangle.s
+	@echo ... square.obj
+	@echo ... square.i
+	@echo ... square.s
 .PHONY : help
 
 

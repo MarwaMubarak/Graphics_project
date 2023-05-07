@@ -10,12 +10,8 @@ C:/Users/20115/Desktop/Graphics_project/circle.h
 windows.h
 -
 
-C:/Users/20115/Desktop/Graphics_project/filling_quarters.cpp
-filling_quarters.h
-C:/Users/20115/Desktop/Graphics_project/filling_quarters.h
-iostream
--
-cmath
+C:/Users/20115/Desktop/Graphics_project/clipping.h
+windows.h
 -
 
 C:/Users/20115/Desktop/Graphics_project/filling_quarters.h
@@ -43,4 +39,16 @@ filling_quarters.h
 C:/Users/20115/Desktop/Graphics_project/filling_quarters.h
 floodfill.h
 C:/Users/20115/Desktop/Graphics_project/floodfill.h
+rectangle.h
+C:/Users/20115/Desktop/Graphics_project/rectangle.h
+clipping.h
+C:/Users/20115/Desktop/Graphics_project/clipping.h
+square.h
+C:/Users/20115/Desktop/Graphics_project/square.h
+
+C:/Users/20115/Desktop/Graphics_project/rectangle.h
+windows.h
+-
+
+C:/Users/20115/Desktop/Graphics_project/square.h
 
