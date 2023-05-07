@@ -14,7 +14,6 @@ void DrawSquare(HDC hdc,int & x, int& y, int& xx, int& yy, COLORREF color) {
             }
         }
     }
-    x=xc-len; y=yc-len;
     xx=xc+len; yy=yc+len;
 }
 #include "square.h"
