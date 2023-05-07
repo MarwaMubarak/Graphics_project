@@ -9,6 +9,7 @@
 #include "rectangle.h"
 #include "clipping.h"
 #include "square.h"
+#include "ellipse.h"
 
 using namespace std;
 static int counter = 0;
@@ -23,6 +24,8 @@ static char option = 'g';
 static int quarter;
 static int xs, ys, xe, ye;
 static int x,y,xx,yy;
+static int x2, y2,x3,y3 ;
+
 
 void colorOptions() {
     cout << "Choose Color:\n"
@@ -348,8 +351,34 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
             }
             else if (option == 'p') {
 
-            } else if (option == 'q') {
+            } else if (option == 'q')
+            {
+                if (counter % 3 == 0) {
+                    xs = LOWORD(lp);
+                    ys = HIWORD(lp);
+                }
+                else if (counter % 3 == 1) {
+                    x2 = LOWORD(lp);
+                    y2 = HIWORD(lp);
+                }
+                else {
+                    x3 = LOWORD(lp);
+                    y3 = HIWORD(lp);
+                    hdc = GetDC(hWnd);
 
+                    int a = (int)sqrt((xs - x2) * (xs - x2) + (ys - y2) * (ys - y2));
+                    int b = (int)sqrt((xs - x3) * (xs - x3) + (ys - y3) * (ys - y3));
+                    if(ellipseOption=='a')
+                        DrawCartesianEllipse(hdc, xs, ys, a, b, RGB(4, 41, 64));
+                    else if(ellipseOption=='b')
+                        DrawPolarEllipse(hdc, xs, ys, a, b, RGB(4, 41, 64));
+//                    else
+
+                    ReleaseDC(hWnd, hdc);
+                    counter=-1;
+                    mainList();
+
+                }
             }
             else if (option == 'r')
             {
