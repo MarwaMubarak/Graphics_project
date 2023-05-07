@@ -1,0 +1,20 @@
+# ninja log v5
+15	359	7051903294565708	CMakeFiles/Graphics_project.dir/square.cpp.obj	fc06e3b223bbbfbc
+3	683	7051903297817720	CMakeFiles/Graphics_project.dir/circle.cpp.obj	d703281712a6020f
+17	425	7051903294710461	CMakeFiles/Graphics_project.dir/ellipse.cpp.obj	2fb17f306b5f3a3f
+5	607	7051903297004697	CMakeFiles/Graphics_project.dir/clipping.cpp.obj	5efa707aa0d91de9
+20	437	7051903295358853	CMakeFiles/Graphics_project.dir/line.cpp.obj	675fe753e06f49e3
+2	538	7051907887459334	CMakeFiles/Graphics_project.dir/main.cpp.obj	c33dc42a3d1349d0
+6	248	7051907884541505	CMakeFiles/Graphics_project.dir/rectangle.cpp.obj	2081bd4b92fc8b48
+13	647	7051903297453533	CMakeFiles/Graphics_project.dir/filling_quarters.cpp.obj	757c876d4a00becb
+7	1224	7051903303234296	CMakeFiles/Graphics_project.dir/floodfill.cpp.obj	b168c3e6e524b99a
+538	736	7051907889325603	Graphics_project.exe	cbabb00e0856ce01
+34	641	7051932048562872	CMakeFiles/Graphics_project.dir/curve.cpp.obj	327a25b3b1795c32
+18	734	7051932049511458	CMakeFiles/Graphics_project.dir/rectangle.cpp.obj	2081bd4b92fc8b48
+8	1041	7051932052561652	CMakeFiles/Graphics_project.dir/main.cpp.obj	c33dc42a3d1349d0
+26	1721	7051932059382418	CMakeFiles/Graphics_project.dir/filling_curve.cpp.obj	52f6766e073fa1ca
+1721	2078	7051932062742757	Graphics_project.exe	9bbe429b546dad45
+9	873	7051932794205583	CMakeFiles/Graphics_project.dir/main.cpp.obj	c33dc42a3d1349d0
+874	1129	7051932796519389	Graphics_project.exe	9bbe429b546dad45
+8	1019	7051936867182614	CMakeFiles/Graphics_project.dir/main.cpp.obj	c33dc42a3d1349d0
+1019	1318	7051936869880082	Graphics_project.exe	9bbe429b546dad45

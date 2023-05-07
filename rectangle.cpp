@@ -1,5 +1,6 @@
 #include <windows.h>
 #include "line.h"
+#include "rectangle.h"
 void swapp(int &x, int &y) {
     int temp;
     temp = x;
@@ -20,4 +21,3 @@ void drawRectangle(HDC hdc,int& x1,int& y1, int& x2,int& y2)
 
 
 }
-#include "Rectangle.h"

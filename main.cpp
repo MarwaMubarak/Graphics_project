@@ -11,6 +11,7 @@
 #include "square.h"
 #include "ellipse.h"
 #include "vector"
+#include "filling_curve.h"
 
 using namespace std;
 static int counter = 0;
@@ -221,9 +222,9 @@ void mainList() {
     } else if (option == 'j') {
 
     } else if (option == 'k') {
-        takeQuarter();
+
     } else if (option == 'l') {
-        takeQuarter();
+
     } else if (option == 'm') {
 
     } else if (option == 'n') {
@@ -258,22 +259,28 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                 UpdateWindow(hWnd);
                 mainList();
                 counter = -1;
-            } else if (option == 'b') {
+            }
+            else if (option == 'b') {
                 cursorInit();
                 SetCursor(cursor);
                 InvalidateRect(hWnd, NULL, TRUE);
                 UpdateWindow(hWnd);
                 mainList();
                 counter = -1;
-            } else if (option == 'c') {
+            }
+            else if (option == 'c') {
 
-            } else if (option == 'd') {
+            }
+            else if (option == 'd') {
 
-            } else if (option == 'e') {
+            }
+            else if (option == 'e') {
 
-            } else if (option == 'f') {
+            }
+            else if (option == 'f') {
 
-            } else if (option == 'g') {
+            }
+            else if (option == 'g') {
                 if (counter % 2 == 0) {
                     xs = LOWORD(lp);
                     ys = HIWORD(lp);
@@ -298,19 +305,11 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
 
                 }
 
-            } else if (option == 'h') {
-                quarterInput();
-
-            } else if (option == 'i') {
-                quarterInput();
-
-            } else if (option == 'j') {
-
-            } else if (option == 'k') {
+            }
+            else if (option == 'h') {
                 if (counter % 2 == 0) {
                     xs = LOWORD(lp);
                     ys = HIWORD(lp);
-                    ReleaseDC(hWnd, hdc);
                 } else {
                     hdc = GetDC(hWnd);
                     xe = LOWORD(lp);
@@ -320,11 +319,11 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     counter = -1;
                     mainList();
                 }
-            } else if (option == 'l') {
+            }
+            else if (option == 'i') {
                 if (counter % 2 == 0) {
                     xs = LOWORD(lp);
                     ys = HIWORD(lp);
-                    ReleaseDC(hWnd, hdc);
                 } else {
                     hdc = GetDC(hWnd);
                     xe = LOWORD(lp);
@@ -334,9 +333,47 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     counter = -1;
                     mainList();
                 }
-            } else if (option == 'm') {
 
-            } else if (option == 'n') {
+            }
+            else if (option == 'j') {
+                if (counter % 2 == 0) {
+                    x = LOWORD(lp);
+                    y = HIWORD(lp);
+                } else if (counter % 2 == 1) {
+
+                    xx = LOWORD(lp);
+                    yy = HIWORD(lp);
+                    hdc = GetDC(hWnd);
+                    int len = (int) sqrt((xx - x) * (xx - x) + (yy - y) * (yy - y));
+                    FillSquareHermite(hdc, x, y, len, color);
+                    ReleaseDC(hWnd, hdc);
+                    counter=-1;
+                    mainList();
+                }
+            }
+            else if (option == 'k') {
+                if (counter % 2 == 0) {
+                    x = LOWORD(lp);
+                    y = HIWORD(lp);
+                } else if (counter % 2 == 1) {
+
+                    xx = LOWORD(lp);
+                    yy = HIWORD(lp);
+                    hdc = GetDC(hWnd);
+                    FillRectangleBezier(hdc, x, y, xx,yy, color);
+                    ReleaseDC(hWnd, hdc);
+                    counter=-1;
+                    mainList();
+                }
+            }
+            else if (option == 'l') {
+
+            }
+            else if (option == 'm')
+            {
+
+            }
+            else if (option == 'n') {
                 hdc = GetDC(hWnd);
                 xe = LOWORD(lp);
                 ye = HIWORD(lp);
@@ -344,7 +381,8 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                 counter = -1;
                 mainList();
 
-            } else if (option == 'o') {
+            }
+            else if (option == 'o') {
                 hdc = GetDC(hWnd);
                 xe = LOWORD(lp);
                 ye = HIWORD(lp);
@@ -352,9 +390,11 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                 counter = -1;
                 mainList();
 
-            } else if (option == 'p') {
+            }
+            else if (option == 'p') {
 
-            } else if (option == 'q') {
+            }
+            else if (option == 'q') {
                 if (counter % 3 == 0) {
                     xs = LOWORD(lp);
                     ys = HIWORD(lp);
@@ -372,14 +412,15 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                         DrawCartesianEllipse(hdc, xs, ys, a, b, RGB(4, 41, 64));
                     else if (ellipseOption == 'b')
                         DrawPolarEllipse(hdc, xs, ys, a, b, RGB(4, 41, 64));
-//                    else
 
                     ReleaseDC(hWnd, hdc);
                     counter = -1;
                     mainList();
 
                 }
-            } else if (option == 'r') {
+            }
+            else if (option == 'r')
+            {
 
                 if (counter % 4 == 0) {
                     xs = LOWORD(lp);
@@ -509,7 +550,6 @@ int APIENTRY WinMain(HINSTANCE h, HINSTANCE p, LPSTR cmd, int csh) {
         return 0;
     }
     ShowWindow(hWnd, csh);
-//    UpdateWindow(hWnd);
     MSG msg = {};
     while (GetMessage(&msg, NULL, 0, 0) > 0) {
         TranslateMessage(&msg);

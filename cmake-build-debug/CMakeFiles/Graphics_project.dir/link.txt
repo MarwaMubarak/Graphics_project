@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\Graphics_project.dir/objects.a
-C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe qc CMakeFiles\Graphics_project.dir/objects.a @CMakeFiles\Graphics_project.dir\objects1.rsp
-C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE -g -Wl,--whole-archive CMakeFiles\Graphics_project.dir/objects.a -Wl,--no-whole-archive -o Graphics_project.exe -Wl,--out-implib,libGraphics_project.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Graphics_project.dir\linkLibs.rsp
