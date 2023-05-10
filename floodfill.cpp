@@ -1,6 +1,7 @@
 #include "floodfill.h"
 #include <bits/stdc++.h>
 #include <Windows.h>
+#include "dataScreen.h"
 using namespace std;
 void RecFloodFill(HDC hdc,int x,int y,  COLORREF fillcolor, COLORREF areaColor)
 {
@@ -8,6 +9,7 @@ void RecFloodFill(HDC hdc,int x,int y,  COLORREF fillcolor, COLORREF areaColor)
     if ((interiorColor == areaColor) && (interiorColor != fillcolor))
     {
         SetPixel(hdc,x,y,fillcolor);
+        add(x, y, fillcolor);
         RecFloodFill(hdc,x+1,y ,fillcolor,areaColor);
         RecFloodFill(hdc,x-1,y ,fillcolor,areaColor);
         RecFloodFill(hdc,x ,y-1,fillcolor,areaColor);
@@ -29,6 +31,7 @@ void NonRecFloodFill(HDC hdc,int x,int y,COLORREF fillcolor,COLORREF areaColor)
         if ((interiorColor == areaColor) && (interiorColor != fillcolor))
         {
             SetPixel(hdc,p.first,p.second,fillcolor);
+            add(p.first,p.second,fillcolor);
             st.push({p.first+1,p.second});
             st.push({p.first-1,p.second});
             st.push({p.first,p.second-1});

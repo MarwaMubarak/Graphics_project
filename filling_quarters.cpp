@@ -5,6 +5,7 @@
 #include "filling_quarters.h"
 #include <iostream>
 #include <cmath>
+#include "dataScreen.h"
 
 void line_DDA(HDC hdc, int x1, int y1, int x2, int y2, COLORREF c) {
     int dx = x2 - x1, dy = y2 - y1;
@@ -15,9 +16,12 @@ void line_DDA(HDC hdc, int x1, int y1, int x2, int y2, COLORREF c) {
         double y = y1;
         double m = (double) dy / dx;
         SetPixel(hdc, x1, y1, c);
+        add(x1, y1, c);
         while (x < x2) {
             y += m, x++;
             SetPixel(hdc, x, round(y), c);
+            add(x, round(y), c);
+
         }
     } else {
         if (y1 > y2)
@@ -26,9 +30,11 @@ void line_DDA(HDC hdc, int x1, int y1, int x2, int y2, COLORREF c) {
         int y = y1;
         double m = (double) dy / dx;
         SetPixel(hdc, x1, y1, c);
+        add(x1, y1, c);
         while (y < y2) {
             y++, x += (1 / m);
             SetPixel(hdc, round(x), y, c);
+            add(round(x), y, c);
         }
     }
 
@@ -67,10 +73,20 @@ void draw_circul_line(HDC hdc, int x1, int y1, int x2, int y2, COLORREF c, int q
         SetPixel(hdc, x + x1, -round(y) + y1, c);
         SetPixel(hdc, x + x1, round(y) + y1, c);
 
+        add(-x + x1, -round(y) + y1, c);
+        add(-x + x1, round(y) + y1, c);
+        add(x + x1, -round(y) + y1, c);
+        add(x + x1, round(y) + y1, c);
+
         SetPixel(hdc, -round(y) + x1, -x + y1, c);
         SetPixel(hdc, -round(y) + x1, x + y1, c);
         SetPixel(hdc, round(y) + x1, -x + y1, c);
         SetPixel(hdc, round(y) + x1, x + y1, c);
+
+        add(-round(y) + x1, -x + y1, c);
+        add(-round(y) + x1, x + y1, c);
+        add(round(y) + x1, -x + y1, c);
+        add(round(y) + x1, x + y1, c);
 
         x += 0.5;
     }
@@ -88,22 +104,34 @@ void draw_circul_quarter(HDC hdc, int x1, int y1, int x2, int y2, int r, COLORRE
         if (quarter == 1) {
             SetPixel(hdc, -x + x1, -round(y) + y1, c);
             SetPixel(hdc, -round(y) + x1, -x + y1, c);
+
+            add(-x + x1, -round(y) + y1, c);
+            add(-round(y) + x1, -x + y1, c);
         }
 
         if (quarter == 2) {
             SetPixel(hdc, x + x1, -round(y) + y1, c);
             SetPixel(hdc, round(y) + x1, -x + y1, c);
+
+            add(x + x1, -round(y) + y1, c);
+            add(round(y) + x1, -x + y1, c);
         }
 
 
         if (quarter == 3) {
             SetPixel(hdc, -round(y) + x1, x + y1, c);
             SetPixel(hdc, -x + x1, round(y) + y1, c);
+
+            add(-round(y) + x1, x + y1, c);
+            add(-x + x1, round(y) + y1, c);
         }
 
         if (quarter == 4) {
             SetPixel(hdc, x + x1, round(y) + y1, c);
             SetPixel(hdc, round(y) + x1, x + y1, c);
+
+            add(x + x1, round(y) + y1, c);
+            add(round(y) + x1, x + y1, c);
         }
 
         x += 0.5;
@@ -118,7 +146,7 @@ void draw_circul_circuler(HDC hdc, int x1, int y1, int x2, int y2, COLORREF c, i
     int rsq = r * r;
     while (x < y) {
         r--;
-        draw_circul_quarter(hdc, x1, y1, x2, y2, r, RGB(4, 41, 64), quarter);
+        draw_circul_quarter(hdc, x1, y1, x2, y2, r, c, quarter);
         double y = sqrt(rsq - x * x);
 
 
@@ -127,10 +155,20 @@ void draw_circul_circuler(HDC hdc, int x1, int y1, int x2, int y2, COLORREF c, i
         SetPixel(hdc, x + x1, -round(y) + y1, c);
         SetPixel(hdc, x + x1, round(y) + y1, c);
 
+        add(-x + x1, -round(y) + y1, c);
+        add(-x + x1, round(y) + y1, c);
+        add(x + x1, -round(y) + y1, c);
+        add(x + x1, round(y) + y1, c);
+
         SetPixel(hdc, -round(y) + x1, -x + y1, c);
         SetPixel(hdc, -round(y) + x1, x + y1, c);
         SetPixel(hdc, round(y) + x1, -x + y1, c);
         SetPixel(hdc, round(y) + x1, x + y1, c);
+
+        add(-round(y) + x1, -x + y1, c);
+        add(-round(y) + x1, x + y1, c);
+        add(round(y) + x1, -x + y1, c);
+        add(round(y) + x1, x + y1, c);
 
         x += 0.5;
     }

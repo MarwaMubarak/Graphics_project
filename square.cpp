@@ -3,6 +3,7 @@
 //
 #include "windows.h"
 #include "math.h"
+#include "dataScreen.h"
 void DrawSquare(HDC hdc,int & x, int& y, int& xx, int& yy, COLORREF color) {
     int i, j;
     int len=(int)sqrt((x - xx) * (x - xx) + (y - yy) * (y - yy));
@@ -11,6 +12,7 @@ void DrawSquare(HDC hdc,int & x, int& y, int& xx, int& yy, COLORREF color) {
         for (j = y; j <= y + len; j++) {
             if(i==x||i==x+len||j==y||j==y+len) {
                 SetPixel(hdc, i, j, color);
+                add(i, j, color);
             }
         }
     }

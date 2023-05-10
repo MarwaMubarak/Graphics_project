@@ -3,11 +3,14 @@
 #include <math.h>
 #include "line.h"
 #include "vector"
+#include "dataScreen.h"
 //------------------------- point-------------------------------------------------------------------------
 void PointClipping(HDC hdc, int x,int y, int xleft, int ytop, int xright, int ybottom,COLORREF c)
 {
-    if(x>=xleft && y>=ytop && x<=xright && y<=ybottom)
-        SetPixel(hdc,x,y,c);
+    if(x>=xleft && y>=ytop && x<=xright && y<=ybottom) {
+        SetPixel(hdc, x, y, c);
+        add(x, y, c);
+    }
 
 }
 //------------------------------------------------------------------------------------------------------

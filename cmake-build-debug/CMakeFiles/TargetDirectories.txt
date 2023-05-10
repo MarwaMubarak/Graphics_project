@@ -1,3 +1,3 @@
-E:/StudioProjects/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir
-E:/StudioProjects/Graphics_project/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/StudioProjects/Graphics_project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Esawy/CLionProjects/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir
+C:/Users/Esawy/CLionProjects/Graphics_project/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Esawy/CLionProjects/Graphics_project/cmake-build-debug/CMakeFiles/rebuild_cache.dir

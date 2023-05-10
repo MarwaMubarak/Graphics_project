@@ -1,6 +1,7 @@
 #include "circle.h"
 #include <windows.h>
 #include <math.h>
+#include "dataScreen.h"
 void Draw8Points(HDC hdc, int xc, int yc, int a, int b,COLORREF c) {
     SetPixel(hdc, xc + a, yc + b, c);
     SetPixel(hdc, xc - a, yc + b, c);
@@ -10,6 +11,16 @@ void Draw8Points(HDC hdc, int xc, int yc, int a, int b,COLORREF c) {
     SetPixel(hdc, xc - b, yc + a, c);
     SetPixel(hdc, xc - b, yc - a, c);
     SetPixel(hdc, xc + b, yc - a, c);
+
+    add(xc + a, yc + b, c);
+    add(xc - a, yc + b, c);
+    add(xc - a, yc - b, c);
+    add(xc + a, yc - b, c);
+    add(xc + b, yc + a, c);
+    add(xc - b, yc + a, c);
+    add(xc - b, yc - a, c);
+    add(xc + b, yc - a, c);
+
 }
 void DrawCircleIterativePolar(HDC hdc, int xc, int yc, int r, COLORREF c) {
     double d_theta = 1.0 / r;
@@ -69,6 +80,7 @@ void DrawPolarCircle(HDC hdc, int xc, int yc, int r, COLORREF c) {
         double x = xc + r * cos(theta);
         double y = yc + r * sin(theta);
         SetPixel(hdc, (int)round(x), (int)round(y), c);
+        add((int)round(x), (int)round(y), c);
         theta += d_theta;
     }
 }

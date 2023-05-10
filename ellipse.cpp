@@ -4,12 +4,18 @@
 
 #include "ellipse.h"
 #include "math.h"
+#include "dataScreen.h"
 
 void Draw4Points(HDC hdc, int xc, int yc, int x, int y, COLORREF c) {
     SetPixel(hdc, xc + x, yc + y, c);
     SetPixel(hdc, xc + x, yc - y, c);
     SetPixel(hdc, xc - x, yc - y, c);
     SetPixel(hdc, xc - x, yc + y, c);
+
+    add(xc + x, yc + y, c);
+    add(xc + x, yc - y, c);
+    add(xc - x, yc - y, c);
+    add(xc - x, yc + y, c);
 
 }
 

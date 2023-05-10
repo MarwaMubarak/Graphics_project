@@ -6,6 +6,7 @@
 #include "filling_curve.h"
 #include "curve.h"
 #include <bits/stdc++.h>
+#include "dataScreen.h"
 using namespace std;
 void FillSquareHermite(HDC hdc, int x, int y, int len, COLORREF c) {
 
@@ -14,6 +15,7 @@ void FillSquareHermite(HDC hdc, int x, int y, int len, COLORREF c) {
         for (int j = y; j <= y + len; j++) {
             if ((i == x || i == x + len || j == y || j == y + len)) {
                 SetPixel(hdc, i, j, c);
+                add(i, j, c);
             }
         }
     }
@@ -30,6 +32,7 @@ void FillRectangleBezier(HDC hdc, int x1, int y1, int x2, int y2, COLORREF c) {
         for (int j = x; j <= x + width; ++j) {
             if (i == x || i == x + width || j == y || j == y + height) {
                 SetPixel(hdc, i, j, c);
+                add(i, j, c);
             }
         }
     }

@@ -5,6 +5,7 @@
 #include <cmath>
 #include <windows.h>
 #include "curve.h"
+#include "dataScreen.h"
 void HermiteCurve(HDC hdc, double x1, double y1, double u1, double v1, double x2, double y2, double u2, double v2,COLORREF c) {
 
     double a3 = 2 * x1 + u1 - 2 * x2 + u2;
@@ -22,6 +23,8 @@ void HermiteCurve(HDC hdc, double x1, double y1, double u1, double v1, double x2
         double x = a3 * t * t * t + a2 * t * t + a1 * t + a0;
         double y = b3 * t * t * t + b2 * t * t + b1 * t + b0;
         SetPixel(hdc, (int) round(x), (int) round(y), c);
+        add((int) round(x), (int) round(y), c);
+
     }
 }
 

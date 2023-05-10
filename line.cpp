@@ -5,6 +5,9 @@
 #include <windows.h>
 #include <cmath>
 #include <iostream>
+#include <unordered_map>
+#include "vector"
+#include "dataScreen.h"
 using namespace std;
 
 void DrawLineDDA(HDC hdc, int x1, int y1, int x2, int y2, COLORREF c) {
@@ -19,10 +22,12 @@ void DrawLineDDA(HDC hdc, int x1, int y1, int x2, int y2, COLORREF c) {
         double y = y1;
         double m = double(y2 - y1) / (x2 - x1);
         SetPixel(hdc, x1, y1, c);
+        add(x1, y1, c);
         while (x < x2) {
             x++;
             y += m;
             SetPixel(hdc, x, round(y), c);
+            add(x, round(y), c);
         }
     } else {
         if (y1 > y2) {
@@ -33,10 +38,12 @@ void DrawLineDDA(HDC hdc, int x1, int y1, int x2, int y2, COLORREF c) {
         int y = y1;
         double m = double(x2 - x1) / (y2 - y1);
         SetPixel(hdc, x1, y1, c);
+        add(x1, y1, c);
         while (y < y2) {
             y++;
             x += m;
             SetPixel(hdc, round(x), y, c);
+            add(round(x), y, c);
         }
     }
 
@@ -54,6 +61,7 @@ void DrawLineMidPoint(HDC hdc, int x0, int y0, int x1, int y1, COLORREF c) {
 
     while (x != x1 || y != y1) {
         SetPixel(hdc, x, y, c);
+        add(x, y, c);
         int e2 = 2 * err;
         if (e2 > -dy) {
             err -= dy;
@@ -65,15 +73,18 @@ void DrawLineMidPoint(HDC hdc, int x0, int y0, int x1, int y1, COLORREF c) {
         }
     }
     SetPixel(hdc, x1, y1, c);
+    add(x1, y1, c);
 }
 
-void DrawLineParametric(HDC hdc,int x1,int y1,int x2,int y2,COLORREF color)
+
+void DrawLineParametric(HDC hdc,int x1,int y1,int x2,int y2, COLORREF color)
 {
     int dx = x2 - x1;
     int dy = y2 - y1;
     for(double t = 0 ; t <= 1 ; t += 0.01){
         int x = x1 + dx * t ;
         int y = y1 + dy * t ;
+        add(x, y, color);
         SetPixel(hdc , x , y , color) ;
     }
 }

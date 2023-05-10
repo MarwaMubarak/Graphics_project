@@ -12,7 +12,12 @@
 #include "ellipse.h"
 #include "vector"
 #include "filling_curve.h"
+#include <fstream>
+#include <deque>
+#include "cardinal_spline_curve.h"
 #include "line.h"
+#include "dataScreen.h"
+#include "ConverxFill.h"
 
 using namespace std;
 static int counter = 0;
@@ -29,8 +34,9 @@ static char option = 'g';
 static int quarter;
 static int xs, ys, xe, ye;
 static int x, y, xx, yy;
-static int x2, y2, x3, y3;
-
+static int x2, y2, x3, y3, numberOfPoints;
+static double tension;
+vector<pair<int, int>> vecPoints;
 
 void colorOptions() {
     cout << "Choose Color:\n"
@@ -166,6 +172,15 @@ void quarterInput() {
     cin >> quarter;
 }
 
+void splineCardinalCurveOptions() {
+    cout << "How many Point you will draw: " << endl;
+    cin >> numberOfPoints;
+    cout << "Enter the tension of the curve: " << endl;
+    cin >> tension;
+    colorOptions();
+}
+
+
 void mainList() {
     cout << "Enter Your Option Character: \n"
             "a. Set background color\n"
@@ -205,7 +220,10 @@ void mainList() {
     } else if (option == 'c') {
 
     } else if (option == 'd') {
-
+        cout << "Are you sure you want to save:\n"
+                "a. YES\n"
+                "b. NO\n"
+             << endl;
     } else if (option == 'e') {
 
     } else if (option == 'f') {
@@ -220,16 +238,15 @@ void mainList() {
     } else if (option == 'i') {
         quarterInput();
     } else if (option == 'j') {
-
+        colorOptions();
     } else if (option == 'k') {
         colorOptions();
-        takeQuarter();
     } else if (option == 'l') {
+        cout << "How many Point you will draw: " << endl;
+        cin >> numberOfPoints;
         colorOptions();
-        takeQuarter();
-
     } else if (option == 'm') {
-
+        //// to do
     } else if (option == 'n') {
         colorOptions();
 
@@ -237,7 +254,7 @@ void mainList() {
         colorOptions();
 
     } else if (option == 'p') {
-
+        splineCardinalCurveOptions();
     } else if (option == 'q') {
         colorOptions();
         ellipseOptions();
@@ -250,47 +267,103 @@ void mainList() {
     }
 }
 
+
+HBRUSH hBrush = CreateSolidBrush(RGB(255, 255, 255)); // create white brush as default background
 LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
     HDC hdc;
-    switch (m) {
-        case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
+    if (cursor == nullptr)cursor = LoadCursor(NULL, IDC_ARROW);
 
-            // All painting occurs here, between BeginPaint and EndPaint.
-            FillRect(hdc, &ps.rcPaint, (HBRUSH) (COLOR_WINDOW+1));
-            EndPaint(hWnd, &ps);
-        }
-        case WM_CREATE:
+//    SetCursor(cursor);
+    switch (m) {
+        case WM_CREATE: {
             mainList();
             break;
+        }
+        case WM_PAINT: {
+            PAINTSTRUCT ps;
+            hdc = BeginPaint(hWnd, &ps);
+            RECT rect;
+            GetClientRect(hWnd, &rect);
+            FillRect(hdc, &rect, hBrush);
+            unordered_map<int, COLORREF> pixels = getPixels();
+            for (auto f: pixels) {
+                int i = f.first / 600;
+                int j = f.first % 600;
+                SetPixel(hdc, i, j, f.second);
+            }
+            EndPaint(hWnd, &ps);
+
+
+            break;
+        }
         case WM_LBUTTONDOWN: {
             if (option == 'a') {
                 colorInit();
+                DeleteObject(hBrush);
+                hBrush = CreateSolidBrush(RGB(BackgroundColor.r, BackgroundColor.g, BackgroundColor.b));
                 InvalidateRect(hWnd, NULL, TRUE);
                 UpdateWindow(hWnd);
                 mainList();
                 counter = -1;
-            }
-            else if (option == 'b') {
+            } else if (option == 'b') {
                 cursorInit();
                 SetCursor(cursor);
                 InvalidateRect(hWnd, NULL, TRUE);
                 UpdateWindow(hWnd);
                 mainList();
                 counter = -1;
-            }
-            else if (option == 'c') {
+            } else if (option == 'c') {
+                for (auto f: getPixels()) {
+                    int i = f.first / 600;
+                    int j = f.first % 600;
+                    SetPixel(hdc, i, j, RGB(BackgroundColor.r, BackgroundColor.g, BackgroundColor.b));
+                }
+                clear();
+                InvalidateRect(hWnd, NULL, TRUE);
+                UpdateWindow(hWnd);
+                mainList();
+                counter = -1;
+            } else if (option == 'd') {
+                char response;
+                cin >> response;
+                if (response == 'a') {
+//                    SaveHWNDToBMP(hWnd);
+                    {
+                        ofstream cout("saved.txt");
+                        cout << getPixels().size() << ' ';
+                        for (auto X: getPixels()) {
+                            cout << X.first / 600 << ' ' << X.first % 600 << ' ' << int(GetRValue(X.second)) << ' '
+                                 << int(GetGValue(X.second)) << ' '
+                                 << int(GetBValue(X.second)) << ' ';
 
-            }
-            else if (option == 'd') {
+                        }
+                        cout << BackgroundColor.r << ' ' << BackgroundColor.g << ' ' << BackgroundColor.b;
+                    }
+                }
+                mainList();
+                counter = -1;
+            } else if (option == 'e') {
+                clear();
+                int size;
+                {
+                    ifstream cin("saved.txt");
+                    cin >> size;
+                    int x, y, r, g, b;
+                    for (int i = 0; i < size; i++) {
+                        cin >> x >> y >> r >> g >> b;
+                        add(x, y, RGB(r, g, b));
+                    }
+                    cin >> BackgroundColor.r >> BackgroundColor.g >> BackgroundColor.b;
+                    DeleteObject(hBrush);
+                    hBrush = CreateSolidBrush(RGB(BackgroundColor.r, BackgroundColor.g, BackgroundColor.b));
+                }
+                InvalidateRect(hWnd, NULL, TRUE);
+                UpdateWindow(hWnd);
+                mainList();
+                counter = -1;
+                break;
 
-            }
-            else if (option == 'e') {
-
-            }
-            else if (option == 'f') {
+            } else if (option == 'f') {
                 if (counter % 2 == 0) {
                     xs = LOWORD(lp);
                     ys = HIWORD(lp);
@@ -311,8 +384,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
 
                 }
 
-            }
-            else if (option == 'g') {
+            } else if (option == 'g') {
                 if (counter % 2 == 0) {
                     xs = LOWORD(lp);
                     ys = HIWORD(lp);
@@ -332,14 +404,15 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     } else if (circleOption == 'e') {
                         DrawModifiedMidpointCircle(hdc, xs, ys, r, color);
                     }
-                    ReleaseDC(hWnd, hdc);
+//                    SaveMainWindowToBitmap(hWnd);
+//                    InvalidateRect(hWnd, NULL, TRUE);
+//                    ReleaseDC(hWnd, hdc);
                     counter = -1;
                     mainList();
 
                 }
 
-            }
-            else if (option == 'h') {
+            } else if (option == 'h') {
                 if (counter % 2 == 0) {
                     xs = LOWORD(lp);
                     ys = HIWORD(lp);
@@ -353,8 +426,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     counter = -1;
                     mainList();
                 }
-            }
-            else if (option == 'i') {
+            } else if (option == 'i') {
                 if (counter % 2 == 0) {
                     xs = LOWORD(lp);
                     ys = HIWORD(lp);
@@ -368,8 +440,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     mainList();
                 }
 
-            }
-            else if (option == 'j') {
+            } else if (option == 'j') {
                 if (counter % 2 == 0) {
                     x = LOWORD(lp);
                     y = HIWORD(lp);
@@ -384,8 +455,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     counter = -1;
                     mainList();
                 }
-            }
-            else if (option == 'k') {
+            } else if (option == 'k') {
                 if (counter % 2 == 0) {
                     x = LOWORD(lp);
                     y = HIWORD(lp);
@@ -399,14 +469,22 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     counter = -1;
                     mainList();
                 }
-            }
-            else if (option == 'l') {
+            } else if (option == 'l') {
+                if (!counter || counter % numberOfPoints) {
+                    xs = LOWORD(lp);
+                    ys = HIWORD(lp);
+                    vecPoints.emplace_back(xs, ys);
+                } else {
+                    hdc = GetDC(hWnd);
+                    ConvexFill(hdc, vecPoints, numberOfPoints, color);
+                    ReleaseDC(hWnd, hdc);
+                    vecPoints.clear();
+                    counter = -1;
+                    mainList();
+                }
+            } else if (option == 'm') {
 
-            }
-            else if (option == 'm') {
-
-            }
-            else if (option == 'n') {
+            } else if (option == 'n') {
                 hdc = GetDC(hWnd);
                 xe = LOWORD(lp);
                 ye = HIWORD(lp);
@@ -414,8 +492,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                 counter = -1;
                 mainList();
 
-            }
-            else if (option == 'o') {
+            } else if (option == 'o') {
                 hdc = GetDC(hWnd);
                 xe = LOWORD(lp);
                 ye = HIWORD(lp);
@@ -423,11 +500,21 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                 counter = -1;
                 mainList();
 
-            }
-            else if (option == 'p') {
+            } else if (option == 'p') {
+                if (!counter || counter % numberOfPoints) {
+                    xs = LOWORD(lp);
+                    ys = HIWORD(lp);
+                    vecPoints.emplace_back(xs, ys);
+                } else {
+                    hdc = GetDC(hWnd);
+                    DrawCardinalSpline(hdc, vecPoints, numberOfPoints, tension, color);
+                    ReleaseDC(hWnd, hdc);
+                    vecPoints.clear();
 
-            }
-            else if (option == 'q') {
+                    counter = -1;
+                    mainList();
+                }
+            } else if (option == 'q') {
                 if (counter % 3 == 0) {
                     xs = LOWORD(lp);
                     ys = HIWORD(lp);
@@ -454,8 +541,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     mainList();
 
                 }
-            }
-            else if (option == 'r') {
+            } else if (option == 'r') {
 
                 if (counter % 4 == 0) {
                     xs = LOWORD(lp);
@@ -483,9 +569,9 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                         if (myPoint.size() == polygonN) {
                             PolygonClip(hdc, myPoint, polygonN, xs, ys, xe, ye, color);
                             counter = -1;
+                            myPoint.clear();
                             mainList();
-                        }
-                        counter--;
+                        } else counter--;
                     }
 
 
@@ -501,8 +587,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     }
                 }
 
-            }
-            else if (option == 's') {
+            } else if (option == 's') {
                 if (counter % 4 == 0) {
                     xs = LOWORD(lp);
                     ys = HIWORD(lp);
@@ -543,14 +628,6 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
         case WM_DESTROY:
             PostQuitMessage(0);
         default:
-            PAINTSTRUCT ps;
-            hdc = BeginPaint(hWnd, &ps);
-            HBRUSH hBrush = CreateSolidBrush(RGB(BackgroundColor.r, BackgroundColor.g, BackgroundColor.b));
-            RECT rect;
-            GetClientRect(hWnd, &rect);
-            FillRect(hdc, &rect, hBrush);
-            DeleteObject(hBrush);
-            EndPaint(hWnd, &ps);
             return DefWindowProc(hWnd, m, wp, lp);
     }
 

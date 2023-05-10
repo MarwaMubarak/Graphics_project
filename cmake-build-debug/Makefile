@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\20115\Desktop\Graphics_project
+CMAKE_SOURCE_DIR = C:\Users\Esawy\CLionProjects\Graphics_project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\20115\Desktop\Graphics_project\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Esawy\CLionProjects\Graphics_project\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\CMakeFiles C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Esawy\CLionProjects\Graphics_project\cmake-build-debug\CMakeFiles C:\Users\Esawy\CLionProjects\Graphics_project\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Esawy\CLionProjects\Graphics_project\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -127,6 +127,54 @@ Graphics_project: cmake_check_build_system
 Graphics_project/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/build
 .PHONY : Graphics_project/fast
+
+ConverxFill.obj: ConverxFill.cpp.obj
+.PHONY : ConverxFill.obj
+
+# target to build an object file
+ConverxFill.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/ConverxFill.cpp.obj
+.PHONY : ConverxFill.cpp.obj
+
+ConverxFill.i: ConverxFill.cpp.i
+.PHONY : ConverxFill.i
+
+# target to preprocess a source file
+ConverxFill.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/ConverxFill.cpp.i
+.PHONY : ConverxFill.cpp.i
+
+ConverxFill.s: ConverxFill.cpp.s
+.PHONY : ConverxFill.s
+
+# target to generate assembly for a file
+ConverxFill.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/ConverxFill.cpp.s
+.PHONY : ConverxFill.cpp.s
+
+cardinal_spline_curve.obj: cardinal_spline_curve.cpp.obj
+.PHONY : cardinal_spline_curve.obj
+
+# target to build an object file
+cardinal_spline_curve.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/cardinal_spline_curve.cpp.obj
+.PHONY : cardinal_spline_curve.cpp.obj
+
+cardinal_spline_curve.i: cardinal_spline_curve.cpp.i
+.PHONY : cardinal_spline_curve.i
+
+# target to preprocess a source file
+cardinal_spline_curve.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/cardinal_spline_curve.cpp.i
+.PHONY : cardinal_spline_curve.cpp.i
+
+cardinal_spline_curve.s: cardinal_spline_curve.cpp.s
+.PHONY : cardinal_spline_curve.s
+
+# target to generate assembly for a file
+cardinal_spline_curve.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/cardinal_spline_curve.cpp.s
+.PHONY : cardinal_spline_curve.cpp.s
 
 circle.obj: circle.cpp.obj
 .PHONY : circle.obj
@@ -176,6 +224,54 @@ clipping.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/clipping.cpp.s
 .PHONY : clipping.cpp.s
 
+curve.obj: curve.cpp.obj
+.PHONY : curve.obj
+
+# target to build an object file
+curve.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/curve.cpp.obj
+.PHONY : curve.cpp.obj
+
+curve.i: curve.cpp.i
+.PHONY : curve.i
+
+# target to preprocess a source file
+curve.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/curve.cpp.i
+.PHONY : curve.cpp.i
+
+curve.s: curve.cpp.s
+.PHONY : curve.s
+
+# target to generate assembly for a file
+curve.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/curve.cpp.s
+.PHONY : curve.cpp.s
+
+dataScreen.obj: dataScreen.cpp.obj
+.PHONY : dataScreen.obj
+
+# target to build an object file
+dataScreen.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/dataScreen.cpp.obj
+.PHONY : dataScreen.cpp.obj
+
+dataScreen.i: dataScreen.cpp.i
+.PHONY : dataScreen.i
+
+# target to preprocess a source file
+dataScreen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/dataScreen.cpp.i
+.PHONY : dataScreen.cpp.i
+
+dataScreen.s: dataScreen.cpp.s
+.PHONY : dataScreen.s
+
+# target to generate assembly for a file
+dataScreen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/dataScreen.cpp.s
+.PHONY : dataScreen.cpp.s
+
 ellipse.obj: ellipse.cpp.obj
 .PHONY : ellipse.obj
 
@@ -199,6 +295,30 @@ ellipse.s: ellipse.cpp.s
 ellipse.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/ellipse.cpp.s
 .PHONY : ellipse.cpp.s
+
+filling_curve.obj: filling_curve.cpp.obj
+.PHONY : filling_curve.obj
+
+# target to build an object file
+filling_curve.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/filling_curve.cpp.obj
+.PHONY : filling_curve.cpp.obj
+
+filling_curve.i: filling_curve.cpp.i
+.PHONY : filling_curve.i
+
+# target to preprocess a source file
+filling_curve.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/filling_curve.cpp.i
+.PHONY : filling_curve.cpp.i
+
+filling_curve.s: filling_curve.cpp.s
+.PHONY : filling_curve.s
+
+# target to generate assembly for a file
+filling_curve.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/filling_curve.cpp.s
+.PHONY : filling_curve.cpp.s
 
 filling_quarters.obj: filling_quarters.cpp.obj
 .PHONY : filling_quarters.obj
@@ -353,15 +473,30 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Graphics_project
+	@echo ... ConverxFill.obj
+	@echo ... ConverxFill.i
+	@echo ... ConverxFill.s
+	@echo ... cardinal_spline_curve.obj
+	@echo ... cardinal_spline_curve.i
+	@echo ... cardinal_spline_curve.s
 	@echo ... circle.obj
 	@echo ... circle.i
 	@echo ... circle.s
 	@echo ... clipping.obj
 	@echo ... clipping.i
 	@echo ... clipping.s
+	@echo ... curve.obj
+	@echo ... curve.i
+	@echo ... curve.s
+	@echo ... dataScreen.obj
+	@echo ... dataScreen.i
+	@echo ... dataScreen.s
 	@echo ... ellipse.obj
 	@echo ... ellipse.i
 	@echo ... ellipse.s
+	@echo ... filling_curve.obj
+	@echo ... filling_curve.i
+	@echo ... filling_curve.s
 	@echo ... filling_quarters.obj
 	@echo ... filling_quarters.i
 	@echo ... filling_quarters.s
