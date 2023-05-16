@@ -1,4 +1,4 @@
-"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\Esawy\CLionProjects\Graphics_project -B C:\Users\Esawy\CLionProjects\Graphics_project\cmake-build-debug
--- Configuring done (0.2s)
+"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" C:\Users\20115\Desktop\Graphics_project
+-- Configuring done (0.5s)
 -- Generating done (0.1s)
--- Build files have been written to: C:/Users/Esawy/CLionProjects/Graphics_project/cmake-build-debug
+-- Build files have been written to: C:/Users/20115/Desktop/Graphics_project/cmake-build-debug

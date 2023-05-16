@@ -18,6 +18,7 @@
 #include "line.h"
 #include "dataScreen.h"
 #include "ConverxFill.h"
+#include "clippingCircle.h"
 
 using namespace std;
 static int counter = 0;
@@ -201,7 +202,9 @@ void mainList() {
             "p. Cardinal Spline Curve\n"
             "q. Ellipse [Direct, Polar and Midpoint]\n"
             "r. Clipping algorithms using Rectangle as Clipping Window[Point ,Line, Polygon] \n"
-            "s. Clipping algorithms using Square as Clipping Window[Point ,Line]" << endl;
+            "s. Clipping algorithms using Square as Clipping Window[Point ,Line] \n"
+            "t. Clipping algorithms using Circle as Clipping Window[Point ,Line]" << endl;
+
     cin >> option;
     if (option == 'a') {
         cout << "Choose Color:\n"
@@ -262,6 +265,11 @@ void mainList() {
         colorOptions();
         clippingRecOptions();
     } else if (option == 's') {
+        colorOptions();
+        clippingSquareOptions();
+    }
+    else if(option=='t')
+    {
         colorOptions();
         clippingSquareOptions();
     }
@@ -327,7 +335,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                 char response;
                 cin >> response;
                 if (response == 'a') {
-//                    SaveHWNDToBMP(hWnd);
+//                  SaveHWNDToBMP(hWnd);
                     {
                         ofstream cout("saved.txt");
                         cout << getPixels().size() << ' ';
@@ -613,6 +621,42 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     yy = HIWORD(lp);
                     if (clippingSquareOption == 'b') {
                         LineClipping(hdc, x, y, xx, yy, xs, ys, xe, ye, color);
+                        ReleaseDC(hWnd, hdc);
+                        counter = -1;
+                        mainList();
+                    }
+                }
+            }
+            else if (option == 't')
+            {
+                static int r;
+                if (counter % 4 == 0) {
+                    xs = LOWORD(lp);
+                    ys = HIWORD(lp);
+                } else if (counter % 4 == 1) {
+                    hdc = GetDC(hWnd);
+                    xe = LOWORD(lp);
+                    ye = HIWORD(lp);
+                     r= (int) sqrt((xs - xe) * (xs - xe) + (ys - ye) * (ys - ye));
+                    DrawCartesianCircle(hdc, xs, ys, r, color);
+                    ReleaseDC(hWnd, hdc);
+                } else if (counter % 4 == 2) {
+                    hdc = GetDC(hWnd);
+                    x = LOWORD(lp);
+                    y = HIWORD(lp);
+                    if (clippingSquareOption == 'a') {
+                        PointClippingC(hdc, x, y, xs, ys, r, color);
+                        ReleaseDC(hWnd, hdc);
+                        counter = -1;
+                        mainList();
+                    }
+                } else if (counter % 4 == 3) {
+                    hdc = GetDC(hWnd);
+                    xx = LOWORD(lp);
+                    yy = HIWORD(lp);
+                    if (clippingSquareOption == 'b') {
+                        LineClippingC(hdc, x, y, xx, yy,xs,  ys, r,color);
+                        //LineClipping(hdc, x, y, xx, yy, xs, ys, xe, ye, color);
                         ReleaseDC(hWnd, hdc);
                         counter = -1;
                         mainList();

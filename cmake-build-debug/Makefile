@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Esawy\CLionProjects\Graphics_project
+CMAKE_SOURCE_DIR = C:\Users\20115\Desktop\Graphics_project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Esawy\CLionProjects\Graphics_project\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\20115\Desktop\Graphics_project\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Esawy\CLionProjects\Graphics_project\cmake-build-debug\CMakeFiles C:\Users\Esawy\CLionProjects\Graphics_project\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\CMakeFiles C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Esawy\CLionProjects\Graphics_project\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -223,6 +223,30 @@ clipping.s: clipping.cpp.s
 clipping.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/clipping.cpp.s
 .PHONY : clipping.cpp.s
+
+clippingCircle.obj: clippingCircle.cpp.obj
+.PHONY : clippingCircle.obj
+
+# target to build an object file
+clippingCircle.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/clippingCircle.cpp.obj
+.PHONY : clippingCircle.cpp.obj
+
+clippingCircle.i: clippingCircle.cpp.i
+.PHONY : clippingCircle.i
+
+# target to preprocess a source file
+clippingCircle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/clippingCircle.cpp.i
+.PHONY : clippingCircle.cpp.i
+
+clippingCircle.s: clippingCircle.cpp.s
+.PHONY : clippingCircle.s
+
+# target to generate assembly for a file
+clippingCircle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/clippingCircle.cpp.s
+.PHONY : clippingCircle.cpp.s
 
 curve.obj: curve.cpp.obj
 .PHONY : curve.obj
@@ -485,6 +509,9 @@ help:
 	@echo ... clipping.obj
 	@echo ... clipping.i
 	@echo ... clipping.s
+	@echo ... clippingCircle.obj
+	@echo ... clippingCircle.i
+	@echo ... clippingCircle.s
 	@echo ... curve.obj
 	@echo ... curve.i
 	@echo ... curve.s
