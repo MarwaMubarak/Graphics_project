@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Graphics_project::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Graphics_project-Debug-892b090adca0bc2681e8.json",
+					"jsonFile" : "target-Graphics_project-Debug-6487815d4428db696bd9.json",
 					"name" : "Graphics_project",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug",
-		"source" : "C:/Users/20115/Desktop/Graphics_project"
+		"build" : "C:/Users/Esawy/CLionProjects/Graphics_project/cmake-build-debug",
+		"source" : "C:/Users/Esawy/CLionProjects/Graphics_project"
 	},
 	"version" : 
 	{

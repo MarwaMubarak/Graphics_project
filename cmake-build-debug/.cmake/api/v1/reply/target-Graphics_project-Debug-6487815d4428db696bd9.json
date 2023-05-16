@@ -38,7 +38,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : "-g -std=gnu++14"
 				}
 			],
 			"language" : "CXX",
@@ -66,7 +66,9 @@
 				21,
 				23,
 				25,
-				27
+				27,
+				29,
+				31
 			]
 		}
 	],
@@ -117,7 +119,9 @@
 				21,
 				23,
 				25,
-				27
+				27,
+				29,
+				31
 			]
 		},
 		{
@@ -137,7 +141,9 @@
 				22,
 				24,
 				26,
-				28
+				28,
+				30,
+				32
 			]
 		}
 	],
@@ -301,6 +307,28 @@
 		{
 			"backtrace" : 1,
 			"path" : "clippingCircle.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "NonConvics.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "NonConvics.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Transformation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Transformation.h",
 			"sourceGroupIndex" : 1
 		}
 	],

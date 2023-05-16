@@ -4,34 +4,27 @@ set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
 
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/20115/Desktop/Graphics_project/ConverxFill.cpp" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir/ConverxFill.cpp.obj"
-  "C:/Users/20115/Desktop/Graphics_project/cardinal_spline_curve.cpp" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir/cardinal_spline_curve.cpp.obj"
-  "C:/Users/20115/Desktop/Graphics_project/circle.cpp" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir/circle.cpp.obj"
-  "C:/Users/20115/Desktop/Graphics_project/clipping.cpp" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir/clipping.cpp.obj"
-  "C:/Users/20115/Desktop/Graphics_project/clippingCircle.cpp" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir/clippingCircle.cpp.obj"
-  "C:/Users/20115/Desktop/Graphics_project/curve.cpp" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir/curve.cpp.obj"
-  "C:/Users/20115/Desktop/Graphics_project/dataScreen.cpp" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir/dataScreen.cpp.obj"
-  "C:/Users/20115/Desktop/Graphics_project/ellipse.cpp" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir/ellipse.cpp.obj"
-  "C:/Users/20115/Desktop/Graphics_project/filling_curve.cpp" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir/filling_curve.cpp.obj"
-  "C:/Users/20115/Desktop/Graphics_project/filling_quarters.cpp" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir/filling_quarters.cpp.obj"
-  "C:/Users/20115/Desktop/Graphics_project/floodfill.cpp" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir/floodfill.cpp.obj"
-  "C:/Users/20115/Desktop/Graphics_project/line.cpp" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir/line.cpp.obj"
-  "C:/Users/20115/Desktop/Graphics_project/main.cpp" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir/main.cpp.obj"
-  "C:/Users/20115/Desktop/Graphics_project/rectangle.cpp" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir/rectangle.cpp.obj"
-  "C:/Users/20115/Desktop/Graphics_project/square.cpp" "C:/Users/20115/Desktop/Graphics_project/cmake-build-debug/CMakeFiles/Graphics_project.dir/square.cpp.obj"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/Esawy/CLionProjects/Graphics_project/ConverxFill.cpp" "CMakeFiles/Graphics_project.dir/ConverxFill.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/ConverxFill.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/NonConvics.cpp" "CMakeFiles/Graphics_project.dir/NonConvics.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/NonConvics.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/Transformation.cpp" "CMakeFiles/Graphics_project.dir/Transformation.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/Transformation.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/cardinal_spline_curve.cpp" "CMakeFiles/Graphics_project.dir/cardinal_spline_curve.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/cardinal_spline_curve.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/circle.cpp" "CMakeFiles/Graphics_project.dir/circle.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/circle.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/clipping.cpp" "CMakeFiles/Graphics_project.dir/clipping.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/clipping.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/clippingCircle.cpp" "CMakeFiles/Graphics_project.dir/clippingCircle.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/clippingCircle.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/curve.cpp" "CMakeFiles/Graphics_project.dir/curve.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/curve.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/dataScreen.cpp" "CMakeFiles/Graphics_project.dir/dataScreen.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/dataScreen.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/ellipse.cpp" "CMakeFiles/Graphics_project.dir/ellipse.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/ellipse.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/filling_curve.cpp" "CMakeFiles/Graphics_project.dir/filling_curve.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/filling_curve.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/filling_quarters.cpp" "CMakeFiles/Graphics_project.dir/filling_quarters.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/filling_quarters.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/floodfill.cpp" "CMakeFiles/Graphics_project.dir/floodfill.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/floodfill.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/line.cpp" "CMakeFiles/Graphics_project.dir/line.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/line.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/main.cpp" "CMakeFiles/Graphics_project.dir/main.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/main.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/rectangle.cpp" "CMakeFiles/Graphics_project.dir/rectangle.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/rectangle.cpp.obj.d"
+  "C:/Users/Esawy/CLionProjects/Graphics_project/square.cpp" "CMakeFiles/Graphics_project.dir/square.cpp.obj" "gcc" "CMakeFiles/Graphics_project.dir/square.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

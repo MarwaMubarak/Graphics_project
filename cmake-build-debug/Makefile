@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\20115\Desktop\Graphics_project
+CMAKE_SOURCE_DIR = C:\Users\Esawy\CLionProjects\Graphics_project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\20115\Desktop\Graphics_project\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Esawy\CLionProjects\Graphics_project\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\CMakeFiles C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Esawy\CLionProjects\Graphics_project\cmake-build-debug\CMakeFiles C:\Users\Esawy\CLionProjects\Graphics_project\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\20115\Desktop\Graphics_project\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Esawy\CLionProjects\Graphics_project\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -151,6 +151,54 @@ ConverxFill.s: ConverxFill.cpp.s
 ConverxFill.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/ConverxFill.cpp.s
 .PHONY : ConverxFill.cpp.s
+
+NonConvics.obj: NonConvics.cpp.obj
+.PHONY : NonConvics.obj
+
+# target to build an object file
+NonConvics.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/NonConvics.cpp.obj
+.PHONY : NonConvics.cpp.obj
+
+NonConvics.i: NonConvics.cpp.i
+.PHONY : NonConvics.i
+
+# target to preprocess a source file
+NonConvics.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/NonConvics.cpp.i
+.PHONY : NonConvics.cpp.i
+
+NonConvics.s: NonConvics.cpp.s
+.PHONY : NonConvics.s
+
+# target to generate assembly for a file
+NonConvics.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/NonConvics.cpp.s
+.PHONY : NonConvics.cpp.s
+
+Transformation.obj: Transformation.cpp.obj
+.PHONY : Transformation.obj
+
+# target to build an object file
+Transformation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/Transformation.cpp.obj
+.PHONY : Transformation.cpp.obj
+
+Transformation.i: Transformation.cpp.i
+.PHONY : Transformation.i
+
+# target to preprocess a source file
+Transformation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/Transformation.cpp.i
+.PHONY : Transformation.cpp.i
+
+Transformation.s: Transformation.cpp.s
+.PHONY : Transformation.s
+
+# target to generate assembly for a file
+Transformation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graphics_project.dir\build.make CMakeFiles/Graphics_project.dir/Transformation.cpp.s
+.PHONY : Transformation.cpp.s
 
 cardinal_spline_curve.obj: cardinal_spline_curve.cpp.obj
 .PHONY : cardinal_spline_curve.obj
@@ -500,6 +548,12 @@ help:
 	@echo ... ConverxFill.obj
 	@echo ... ConverxFill.i
 	@echo ... ConverxFill.s
+	@echo ... NonConvics.obj
+	@echo ... NonConvics.i
+	@echo ... NonConvics.s
+	@echo ... Transformation.obj
+	@echo ... Transformation.i
+	@echo ... Transformation.s
 	@echo ... cardinal_spline_curve.obj
 	@echo ... cardinal_spline_curve.i
 	@echo ... cardinal_spline_curve.s

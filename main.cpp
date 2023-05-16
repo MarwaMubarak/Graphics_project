@@ -19,6 +19,9 @@
 #include "dataScreen.h"
 #include "ConverxFill.h"
 #include "clippingCircle.h"
+#include "NonConvics.h"
+#include "Transformation.h"
+#include <algorithm>
 
 using namespace std;
 static int counter = 0;
@@ -37,7 +40,31 @@ static int xs, ys, xe, ye;
 static int x, y, xx, yy;
 static int x2, y2, x3, y3, numberOfPoints;
 static double tension;
+static int lxs, lys, lxe, lye;
 vector<pair<int, int>> vecPoints;
+static char transformationoption;
+static int tranX, tranY;
+
+pair<int , int> extendedEuclid(int a, int b){
+    if(b == 0){
+        return make_pair(1, 0);
+    }
+    else{
+        pair<int, int> d = extendedEuclid(b, a % b);
+        return make_pair(d.second, d.first - d.second * (a / b));
+    }
+}
+void transformationOptions() {
+    cout << "a. TranslationLine\n"
+         << "b. ScallingLine\n";
+
+    cin >> transformationoption;
+    if (transformationoption == 'a')
+        cout << "Enter the values of transmation\n";
+    else
+        cout << "Enter the values of Scale\n";
+    cin >> tranX >> tranY;
+}
 
 void colorOptions() {
     cout << "Choose Color:\n"
@@ -203,7 +230,8 @@ void mainList() {
             "q. Ellipse [Direct, Polar and Midpoint]\n"
             "r. Clipping algorithms using Rectangle as Clipping Window[Point ,Line, Polygon] \n"
             "s. Clipping algorithms using Square as Clipping Window[Point ,Line] \n"
-            "t. Clipping algorithms using Circle as Clipping Window[Point ,Line]" << endl;
+            "t. Clipping algorithms using Circle as Clipping Window[Point ,Line]\n"
+            "u. Transformation in line" << endl;
 
     cin >> option;
     if (option == 'a') {
@@ -249,7 +277,9 @@ void mainList() {
         cin >> numberOfPoints;
         colorOptions();
     } else if (option == 'm') {
-        //// to do
+        cout << "How many Point you will draw: " << endl;
+        cin >> numberOfPoints;
+        colorOptions();
     } else if (option == 'n') {
         colorOptions();
 
@@ -267,11 +297,12 @@ void mainList() {
     } else if (option == 's') {
         colorOptions();
         clippingSquareOptions();
-    }
-    else if(option=='t')
-    {
+    } else if (option == 't') {
         colorOptions();
         clippingSquareOptions();
+    } else if (option == 'u') {
+        transformationOptions();
+        colorOptions();
     }
 }
 
@@ -375,12 +406,17 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                 if (counter % 2 == 0) {
                     xs = LOWORD(lp);
                     ys = HIWORD(lp);
+                    lxs = xs;
+                    lys = ys;
                 } else {
                     hdc = GetDC(hWnd);
                     xe = LOWORD(lp);
                     ye = HIWORD(lp);
+                    lxe = xe;
+                    lye = ye;
                     if (lineOption == 'a') {
                         DrawLineDDA(hdc, xs, ys, xe, ye, color);
+
                     } else if (lineOption == 'b') {
                         DrawLineMidPoint(hdc, xs, ys, xe, ye, color);
                     } else if (lineOption == 'c') {
@@ -491,7 +527,18 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     mainList();
                 }
             } else if (option == 'm') {
-
+                if (!counter || counter % numberOfPoints) {
+                    xs = LOWORD(lp);
+                    ys = HIWORD(lp);
+                    vecPoints.emplace_back(xs, ys);
+                } else {
+                    hdc = GetDC(hWnd);
+                    GeneralFill(hdc, vecPoints, numberOfPoints, color);
+                    ReleaseDC(hWnd, hdc);
+                    vecPoints.clear();
+                    counter = -1;
+                    mainList();
+                }
             } else if (option == 'n') {
                 hdc = GetDC(hWnd);
                 xe = LOWORD(lp);
@@ -626,9 +673,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                         mainList();
                     }
                 }
-            }
-            else if (option == 't')
-            {
+            } else if (option == 't') {
                 static int r;
                 if (counter % 4 == 0) {
                     xs = LOWORD(lp);
@@ -637,7 +682,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     hdc = GetDC(hWnd);
                     xe = LOWORD(lp);
                     ye = HIWORD(lp);
-                     r= (int) sqrt((xs - xe) * (xs - xe) + (ys - ye) * (ys - ye));
+                    r = (int) sqrt((xs - xe) * (xs - xe) + (ys - ye) * (ys - ye));
                     DrawCartesianCircle(hdc, xs, ys, r, color);
                     ReleaseDC(hWnd, hdc);
                 } else if (counter % 4 == 2) {
@@ -655,14 +700,45 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     xx = LOWORD(lp);
                     yy = HIWORD(lp);
                     if (clippingSquareOption == 'b') {
-                        LineClippingC(hdc, x, y, xx, yy,xs,  ys, r,color);
+                        LineClippingC(hdc, x, y, xx, yy, xs, ys, r, color);
                         //LineClipping(hdc, x, y, xx, yy, xs, ys, xe, ye, color);
                         ReleaseDC(hWnd, hdc);
                         counter = -1;
                         mainList();
                     }
                 }
+            } else if (option == 'u') {
+                if (transformationoption == 'a') {
+                    hdc = GetDC(hWnd);
+                    TranslationLineDDA(hdc, lxs, lys, lxe, lye, tranX, tranY, color);
+
+                    ReleaseDC(hWnd, hdc);
+                    counter = -1;
+                    mainList();
+                } else if (transformationoption == 'b') {
+                    hdc = GetDC(hWnd);
+                    ScalingLineDDA(hdc, lxs, lys, lxe, lye, tranX, tranY, color);
+//                    int A = lye - lys, B = -(lxe - lxs);
+//                    pair<int, int> ret = extendedEuclid(A, B);
+//                    int X = ret.first, Y = ret.second;
+//
+//                    int g = __gcd(lxe - lxs, lye - lys);
+//                    int dx = (lxe - lxs)/g, dy = (lye - lys)/g;
+//                    // draw
+//                    for (int i = 0; i < 100; ++i) {
+//                        X += dx;
+//                        Y += dy;
+//                        ScalingLineDDA(hdc, lxs + X, lys + Y, lxe + X, lye + Y, tranX, tranY, color);
+//                    }
+                    for (double i = 1.0 / min(tranX,tranY); i <= min(tranX,tranY)/(min(tranX,tranY)/2); i += 1.0 / min(tranX,tranY))
+                        ScalingLineDDA(hdc, lxs + i, lys + i, lxe + i, lye + i, tranX, tranY, color);
+
+                    ReleaseDC(hWnd, hdc);
+                    counter = -1;
+                    mainList();
+                }
             }
+
         }
             counter++;
             break;

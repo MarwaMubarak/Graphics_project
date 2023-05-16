@@ -72,15 +72,3 @@ void ConvexFill (HDC hdc , vector <pair<int,int>>p , int n , COLORREF c)
     Table2Screen(hdc,t,c);
 }
 
-void swap(int &x1,int &y1,int &x2,int &y2){
-    int temp=x1;
-    x1=x2;
-    x2=temp;
-    int temp2=y1;
-    y1=y2;
-    y2=temp2;
-}
-
-int Round(double x){
-    return (int)(x+0.5);
-}
