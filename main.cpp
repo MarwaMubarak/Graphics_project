@@ -43,17 +43,17 @@ static double tension;
 static int lxs, lys, lxe, lye;
 vector<pair<int, int>> vecPoints;
 static char transformationoption;
-static int tranX, tranY;
+static double tranX, tranY;
 
-pair<int , int> extendedEuclid(int a, int b){
-    if(b == 0){
+pair<int, int> extendedEuclid(int a, int b) {
+    if (b == 0) {
         return make_pair(1, 0);
-    }
-    else{
+    } else {
         pair<int, int> d = extendedEuclid(b, a % b);
         return make_pair(d.second, d.first - d.second * (a / b));
     }
 }
+
 void transformationOptions() {
     cout << "a. TranslationLine\n"
          << "b. ScallingLine\n";
@@ -259,50 +259,50 @@ void mainList() {
 
     } else if (option == 'f') {
         lineOptions();
-        colorOptions();
+
     } else if (option == 'g') {
         circleOptions();
-        colorOptions();
+
 
     } else if (option == 'h') {
         quarterInput();
     } else if (option == 'i') {
         quarterInput();
     } else if (option == 'j') {
-        colorOptions();
+
     } else if (option == 'k') {
-        colorOptions();
+
     } else if (option == 'l') {
         cout << "How many Point you will draw: " << endl;
         cin >> numberOfPoints;
-        colorOptions();
+
     } else if (option == 'm') {
         cout << "How many Point you will draw: " << endl;
         cin >> numberOfPoints;
-        colorOptions();
+
     } else if (option == 'n') {
-        colorOptions();
+
 
     } else if (option == 'o') {
-        colorOptions();
+
 
     } else if (option == 'p') {
         splineCardinalCurveOptions();
     } else if (option == 'q') {
-        colorOptions();
+
         ellipseOptions();
     } else if (option == 'r') {
-        colorOptions();
+
         clippingRecOptions();
     } else if (option == 's') {
-        colorOptions();
+
         clippingSquareOptions();
     } else if (option == 't') {
-        colorOptions();
+
         clippingSquareOptions();
     } else if (option == 'u') {
         transformationOptions();
-        colorOptions();
+
     }
 }
 
@@ -315,7 +315,84 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
 //    SetCursor(cursor);
     switch (m) {
         case WM_CREATE: {
-            mainList();
+            // Create the menu
+            HMENU hMenu = CreateMenu();
+
+            HMENU hSubMenu1 = CreatePopupMenu();
+            HMENU hSubMenu2 = CreatePopupMenu();
+            HMENU hSubMenu3 = CreatePopupMenu();
+            HMENU hSubMenu4 = CreatePopupMenu();
+            HMENU hSubMenu5 = CreatePopupMenu();
+            HMENU hSubMenu6 = CreatePopupMenu();
+            HMENU hSubMenu7 = CreatePopupMenu();
+            HMENU hSubMenu8 = CreatePopupMenu();
+            HMENU hSubMenu9 = CreatePopupMenu();
+            HMENU hSubMenu10 = CreatePopupMenu();
+            HMENU hSubMenu11 = CreatePopupMenu();
+            HMENU hSubMenu12 = CreatePopupMenu();
+            HMENU hSubMenu13 = CreatePopupMenu();
+            HMENU hSubMenu14 = CreatePopupMenu();
+            HMENU hSubMenu15 = CreatePopupMenu();
+            HMENU hSubMenu16 = CreatePopupMenu();
+            HMENU hSubMenu17 = CreatePopupMenu();
+            HMENU hSubMenu18 = CreatePopupMenu();
+            HMENU hSubMenu19 = CreatePopupMenu();
+            HMENU hSubMenu20 = CreatePopupMenu();
+            HMENU hSubMenu21 = CreatePopupMenu();
+            HMENU hSubMenu22 = CreatePopupMenu();
+
+
+            AppendMenu(hSubMenu1, MF_STRING, 1, "Apply");
+            AppendMenu(hSubMenu2, MF_STRING, 2, "Apply");
+            AppendMenu(hSubMenu3, MF_STRING, 3, "Apply");
+            AppendMenu(hSubMenu4, MF_STRING, 4, "Apply");
+            AppendMenu(hSubMenu5, MF_STRING, 5, "Apply");
+            AppendMenu(hSubMenu6, MF_STRING, 6, "Apply");
+            AppendMenu(hSubMenu7, MF_STRING, 7, "Apply");
+            AppendMenu(hSubMenu8, MF_STRING, 8, "Apply");
+            AppendMenu(hSubMenu9, MF_STRING, 9, "Apply");
+            AppendMenu(hSubMenu10, MF_STRING, 10, "Apply");
+            AppendMenu(hSubMenu11, MF_STRING, 11, "Apply");
+            AppendMenu(hSubMenu12, MF_STRING, 12, "Apply");
+            AppendMenu(hSubMenu13, MF_STRING, 13, "Apply");
+            AppendMenu(hSubMenu14, MF_STRING, 14, "Apply");
+            AppendMenu(hSubMenu15, MF_STRING, 15, "Apply");
+            AppendMenu(hSubMenu16, MF_STRING, 16, "Apply");
+            AppendMenu(hSubMenu17, MF_STRING, 17, "Apply");
+            AppendMenu(hSubMenu18, MF_STRING, 18, "Apply");
+            AppendMenu(hSubMenu19, MF_STRING, 19, "Apply");
+            AppendMenu(hSubMenu20, MF_STRING, 20, "Apply");
+            AppendMenu(hSubMenu21, MF_STRING, 21, "Apply");
+            AppendMenu(hSubMenu22, MF_STRING, 22, "Apply");
+
+
+            // Append the submenus to the main menu
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu1, "Set background color");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu2, "Change mouse cursor");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu3, "Clear screen from shapes");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu4, "Save all data in screen");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu5, "Load data from files");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu6, "Draw line");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu7, "Draw Circle");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu8, "Filling Circle with lines");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu9, "Filling Circle with other circles");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu10, "Filling Square with Hermit Curve");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu11, "Filling Rectangle with Bezier Curve");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu12, "Convex Filling");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu13, "Non Convex Filling");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu14, "Recursive Flood Fill");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu15, "Non Recursive Flood Fill");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu16, "Cardinal Spline Curve");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu17, "Ellipse");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu18, "Clipping Rectangle");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu19, "Clipping Square");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu20, "Clipping Circle");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu21, "Transformation");
+            AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hSubMenu22, "Set Pen Color");
+
+            // Attach the menu to the window
+            SetMenu(hWnd, hMenu);
+//            mainList();
             break;
         }
         case WM_PAINT: {
@@ -335,21 +412,165 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
 
             break;
         }
+
+        case WM_COMMAND: {
+            switch (LOWORD(wp)) {
+                case 1: {
+                    cout << "Choose Color:\n"
+                            "a. White\n"
+                            "b. Black\n"
+                            "c. Red\n"
+                            "d. Green\n"
+                            "e. Blue\n"
+                            "f. Other" << endl;
+                    option = 'a';
+                    colorInit();
+                    break;
+                }
+                case 2:{
+                    cout << "Choose the Shape of the cursor:\n"
+                            "a. Arrow\n"
+                            "b. Hand\n"
+                            "c. Cross\n"
+                         << endl;
+                    cursorInit();
+                    SetCursor(cursor);
+                    option = 'b';
+                    break;
+                }
+                case 3:{
+                    option = 'c';
+                    break;
+                }
+                case 4:{
+                    cout << "Are you sure you want to save:\n"
+                            "a. YES\n"
+                            "b. NO\n"
+                         << endl;
+                    option = 'd';
+                    break;
+                }
+                case 5:{
+                    option = 'e';
+                    break;
+                }
+                case 6:{
+                    option = 'f';
+                    lineOptions();
+
+                    break;
+                }
+                case 7:{
+                    option = 'g';
+                    circleOptions();
+
+                    break;
+                }
+                case 8:{
+                    option = 'h';
+                    quarterInput();
+                    break;
+
+                }
+                case 9:{
+                    option = 'i';
+                    quarterInput();
+                    break;
+
+                }
+                case 10:{
+                    option = 'j';
+
+                    break;
+
+                }
+                case 11:{
+                    option = 'k';
+
+                    break;
+
+                }
+                case 12:{
+                    option = 'l';
+                    cout << "How many Point you will draw: " << endl;
+                    cin >> numberOfPoints;
+
+                    break;
+                }
+                case 13:{
+                    option = 'm';
+                    cout << "How many Point you will draw: " << endl;
+                    cin >> numberOfPoints;
+
+                    break;
+                }
+                case 14:{
+                    option = 'n';
+
+                    break;
+                }
+                case 15:{
+                    option = 'o';
+
+                    break;
+                }
+                case 16:{
+                    option = 'p';
+                    splineCardinalCurveOptions();
+                    break;
+                }
+                case 17:{
+                    option = 'q';
+
+                    ellipseOptions();
+                    break;
+                }
+                case 18:{
+                    option = 'r';
+
+                    clippingRecOptions();
+                    break;
+                }
+                case 19:{
+                    option = 's';
+
+                    clippingSquareOptions();
+                    break;
+                }
+                case 20:{
+                    option = 't';
+
+                    clippingSquareOptions();
+                    break;
+                }
+                case 21:{
+                    option = 'u';
+                    transformationOptions();
+
+                    break;
+                }
+                case 22:{
+                    colorOptions();
+                    break;
+                }
+            }
+            break;
+        }
         case WM_LBUTTONDOWN: {
             if (option == 'a') {
-                colorInit();
+//                colorInit();
                 DeleteObject(hBrush);
                 hBrush = CreateSolidBrush(RGB(BackgroundColor.r, BackgroundColor.g, BackgroundColor.b));
                 InvalidateRect(hWnd, NULL, TRUE);
                 UpdateWindow(hWnd);
-                mainList();
+//                mainList();
                 counter = -1;
             } else if (option == 'b') {
-                cursorInit();
+//                cursorInit();
                 SetCursor(cursor);
                 InvalidateRect(hWnd, NULL, TRUE);
                 UpdateWindow(hWnd);
-                mainList();
+//                mainList();
                 counter = -1;
             } else if (option == 'c') {
                 for (auto f: getPixels()) {
@@ -360,7 +581,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                 clear();
                 InvalidateRect(hWnd, NULL, TRUE);
                 UpdateWindow(hWnd);
-                mainList();
+//                mainList();
                 counter = -1;
             } else if (option == 'd') {
                 char response;
@@ -379,7 +600,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                         cout << BackgroundColor.r << ' ' << BackgroundColor.g << ' ' << BackgroundColor.b;
                     }
                 }
-                mainList();
+//                mainList();
                 counter = -1;
             } else if (option == 'e') {
                 clear();
@@ -398,7 +619,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                 }
                 InvalidateRect(hWnd, NULL, TRUE);
                 UpdateWindow(hWnd);
-                mainList();
+//                mainList();
                 counter = -1;
                 break;
 
@@ -424,7 +645,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     }
                     ReleaseDC(hWnd, hdc);
                     counter = -1;
-                    mainList();
+//                    mainList();
 
                 }
 
@@ -452,7 +673,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
 //                    InvalidateRect(hWnd, NULL, TRUE);
 //                    ReleaseDC(hWnd, hdc);
                     counter = -1;
-                    mainList();
+//                    mainList();
 
                 }
 
@@ -468,7 +689,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
 
                     ReleaseDC(hWnd, hdc);
                     counter = -1;
-                    mainList();
+//                    mainList();
                 }
             } else if (option == 'i') {
                 if (counter % 2 == 0) {
@@ -481,7 +702,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     draw_circul_circuler(hdc, xs, ys, xe, ye, color, quarter);
                     ReleaseDC(hWnd, hdc);
                     counter = -1;
-                    mainList();
+//                    mainList();
                 }
 
             } else if (option == 'j') {
@@ -497,7 +718,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     FillSquareHermite(hdc, x, y, len, color);
                     ReleaseDC(hWnd, hdc);
                     counter = -1;
-                    mainList();
+//                    mainList();
                 }
             } else if (option == 'k') {
                 if (counter % 2 == 0) {
@@ -511,7 +732,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     FillRectangleBezier(hdc, x, y, xx, yy, color);
                     ReleaseDC(hWnd, hdc);
                     counter = -1;
-                    mainList();
+//                    mainList();
                 }
             } else if (option == 'l') {
                 if (!counter || counter % numberOfPoints) {
@@ -524,7 +745,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     ReleaseDC(hWnd, hdc);
                     vecPoints.clear();
                     counter = -1;
-                    mainList();
+//                    mainList();
                 }
             } else if (option == 'm') {
                 if (!counter || counter % numberOfPoints) {
@@ -537,7 +758,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     ReleaseDC(hWnd, hdc);
                     vecPoints.clear();
                     counter = -1;
-                    mainList();
+//                    mainList();
                 }
             } else if (option == 'n') {
                 hdc = GetDC(hWnd);
@@ -545,7 +766,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                 ye = HIWORD(lp);
                 RecFloodFill(hdc, xe, ye, color, GetPixel(hdc, xe, ye));
                 counter = -1;
-                mainList();
+//                mainList();
 
             } else if (option == 'o') {
                 hdc = GetDC(hWnd);
@@ -553,7 +774,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                 ye = HIWORD(lp);
                 NonRecFloodFill(hdc, xe, ye, color, GetPixel(hdc, xe, ye));
                 counter = -1;
-                mainList();
+//                mainList();
 
             } else if (option == 'p') {
                 if (!counter || counter % numberOfPoints) {
@@ -567,7 +788,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                     vecPoints.clear();
 
                     counter = -1;
-                    mainList();
+//                    mainList();
                 }
             } else if (option == 'q') {
                 if (counter % 3 == 0) {
@@ -593,7 +814,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
 
                     ReleaseDC(hWnd, hdc);
                     counter = -1;
-                    mainList();
+//                    mainList();
 
                 }
             } else if (option == 'r') {
@@ -617,7 +838,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                         PointClipping(hdc, x, y, xs, ys, xe, ye, color);
                         ReleaseDC(hWnd, hdc);
                         counter = -1;
-                        mainList();
+//                        mainList();
                     }
                     if (clippingRecOption == 'c') {
                         myPoint.push_back({x, y});
@@ -625,7 +846,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                             PolygonClip(hdc, myPoint, polygonN, xs, ys, xe, ye, color);
                             counter = -1;
                             myPoint.clear();
-                            mainList();
+//                            mainList();
                         } else counter--;
                     }
 
@@ -638,7 +859,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                         LineClipping(hdc, x, y, xx, yy, xs, ys, xe, ye, color);
                         ReleaseDC(hWnd, hdc);
                         counter = -1;
-                        mainList();
+//                        mainList();
                     }
                 }
 
@@ -660,7 +881,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                         PointClipping(hdc, x, y, xs, ys, xe, ye, color);
                         ReleaseDC(hWnd, hdc);
                         counter = -1;
-                        mainList();
+//                        mainList();
                     }
                 } else if (counter % 4 == 3) {
                     hdc = GetDC(hWnd);
@@ -670,7 +891,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                         LineClipping(hdc, x, y, xx, yy, xs, ys, xe, ye, color);
                         ReleaseDC(hWnd, hdc);
                         counter = -1;
-                        mainList();
+//                        mainList();
                     }
                 }
             } else if (option == 't') {
@@ -693,7 +914,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                         PointClippingC(hdc, x, y, xs, ys, r, color);
                         ReleaseDC(hWnd, hdc);
                         counter = -1;
-                        mainList();
+//                        mainList();
                     }
                 } else if (counter % 4 == 3) {
                     hdc = GetDC(hWnd);
@@ -704,7 +925,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
                         //LineClipping(hdc, x, y, xx, yy, xs, ys, xe, ye, color);
                         ReleaseDC(hWnd, hdc);
                         counter = -1;
-                        mainList();
+//                        mainList();
                     }
                 }
             } else if (option == 'u') {
@@ -714,28 +935,18 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT m, WPARAM wp, LPARAM lp) {
 
                     ReleaseDC(hWnd, hdc);
                     counter = -1;
-                    mainList();
+//                    mainList();
                 } else if (transformationoption == 'b') {
                     hdc = GetDC(hWnd);
                     ScalingLineDDA(hdc, lxs, lys, lxe, lye, tranX, tranY, color);
-//                    int A = lye - lys, B = -(lxe - lxs);
-//                    pair<int, int> ret = extendedEuclid(A, B);
-//                    int X = ret.first, Y = ret.second;
-//
-//                    int g = __gcd(lxe - lxs, lye - lys);
-//                    int dx = (lxe - lxs)/g, dy = (lye - lys)/g;
-//                    // draw
-//                    for (int i = 0; i < 100; ++i) {
-//                        X += dx;
-//                        Y += dy;
-//                        ScalingLineDDA(hdc, lxs + X, lys + Y, lxe + X, lye + Y, tranX, tranY, color);
-//                    }
-                    for (double i = 1.0 / min(tranX,tranY); i <= min(tranX,tranY)/(min(tranX,tranY)/2); i += 1.0 / min(tranX,tranY))
+
+                    int j = 1;
+                    for (double i = 0.6 / min(tranX, tranY); j <= tranX; i += 0.6 / min(tranX, tranY), j++)
                         ScalingLineDDA(hdc, lxs + i, lys + i, lxe + i, lye + i, tranX, tranY, color);
 
                     ReleaseDC(hWnd, hdc);
                     counter = -1;
-                    mainList();
+//                    mainList();
                 }
             }
 
